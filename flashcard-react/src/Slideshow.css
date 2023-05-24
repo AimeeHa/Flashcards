@@ -24,16 +24,16 @@
 
 .slideshowDot {
   display: inline-block;
-  height: 8px;
-  width: 24spx;
+  height: 6px;
+  width: 32px;
   border-radius: 10%;
 
   cursor: pointer;
-  margin: 15px 7px 0px;
+  margin: 10px 4px 0px;
 
-  background-color: #c4c4c4;
+  background-color: #f4decb;
 }
 
 .slideshowDot.active {
-  background-color: #ae8672;
+  background-color: #a56b3b;
 }
