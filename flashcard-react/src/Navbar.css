@@ -1,0 +1,37 @@
+.navbarRoot {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #e0b694;
+  color: #683811;
+  font-weight: 600;
+  font-size: 24px;
+  padding: 18px 24px 12px;
+  height: 36px;
+  align-items: center;
+}
+
+#aimee {
+  font-size: 32px;
+}
+
+.navButtons {
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: #683811;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.loginButtons {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-grow: 0.5;
+}

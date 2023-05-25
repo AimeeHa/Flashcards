@@ -3,16 +3,6 @@
   margin: 0;
 }
 
-/* temp TO BE CHANGED */
-.temp {
-  background-color: #e0b694;
-  color: #683811;
-  font-weight: 600;
-  font-size: 24px;
-  padding: 18px 12px 12px;
-  height: 64px;
-}
-
 #homepage {
   display: flex;
   flex-direction: column;
