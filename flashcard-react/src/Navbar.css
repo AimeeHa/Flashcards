@@ -11,27 +11,49 @@
   align-items: center;
 }
 
+.navEnds {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
 #aimee {
-  font-size: 32px;
+  font-size: 28px;
+  margin-left: 24px;
+}
+
+.loginButtons {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 24px;
+}
+
+#login {
+  border: #f3e7d7 1px solid;
+  border-radius: 6px;
+  padding: 2px 8px;
+  background-color: #f3e7d7;
+}
+
+#login:hover {
+  opacity: 80%;
+  background-color: #e0b694;
+  color: #f3e7d7;
 }
 
 .navButtons {
+  width: 100%;
+  position: absolute;
   display: flex;
   flex-direction: row;
-  gap: 18px;
-  flex-grow: 1;
+  gap: 32px;
   justify-content: center;
 }
 
 a {
   text-decoration: none;
   color: #683811;
-  font-weight: 600;
-  font-size: 18px;
-}
-
-.loginButtons {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-grow: 0.5;
+  font-weight: 500;
+  font-size: 16px;
 }

@@ -3,15 +3,19 @@ import './Navbar.css';
 function Navbar() {
   return (
     <nav className="navbarRoot">
-      <div id="aimee">Aimee's Cards</div>
-      <div className="navButtons">
-        <a href="/">Home</a>
-        <a href="/">Explore</a>
-        <a href="/">My Study</a>
-        <a href="/">Create New Flashcards</a>
+      <div className="navEnds">
+        <div id="aimee">Aimee's Cards</div>
+        <div className="loginButtons">
+          <a id="login" href="/">
+            LOG IN
+          </a>
+        </div>
       </div>
-      <div className="loginButtons">
-        <a href="/">Log In</a>
+      <div className="navButtons">
+        <a href="/">HOME</a>
+        <a href="/">EXPLORE</a>
+        <a href="/">MY STUDY</a>
+        <a href="/">CREATE</a>
       </div>
     </nav>
   );
