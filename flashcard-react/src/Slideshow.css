@@ -1,7 +1,8 @@
 .slideshow {
   margin: 0 auto;
   overflow: hidden;
-  max-width: 500px;
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 .slideshowSlider {
@@ -11,9 +12,10 @@
 
 .slide {
   display: inline-block;
-  height: 400px;
+  min-height: 380px;
   width: 100%;
-  border-radius: 40px;
+  border-radius: 10px;
+  background-color: bisque;
 }
 
 /* Buttons */
@@ -29,7 +31,7 @@
   border-radius: 10%;
 
   cursor: pointer;
-  margin: 10px 4px 0px;
+  margin: 10px 4px;
 
   background-color: #f4decb;
 }

@@ -42,18 +42,12 @@ function Slideshow() {
         className="slideshowSlider"
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        {slides.map(
-          ({ title, content }, index) => (
-            // to see the console.log, will remove laters
-            console.log('slides.map', index, title),
-            (
-              <div className="slide" key={index}>
-                {title} <br />
-                {content}
-              </div>
-            )
-          ),
-        )}
+        {slides.map(({ title, content }, index) => (
+          <div className="slide" key={index}>
+            {title} <br />
+            {content}
+          </div>
+        ))}
       </div>
 
       <div className="slideshowDots">
