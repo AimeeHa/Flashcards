@@ -11,11 +11,19 @@ function Navbar() {
           </a>
         </div>
       </div>
-      <div className="navButtons">
-        <a href="/">HOME</a>
-        <a href="/">EXPLORE</a>
-        <a href="/">MY STUDY</a>
-        <a href="/">CREATE</a>
+      <div className="navButtonGroup">
+        <a className="navButton" href="/">
+          HOME
+        </a>
+        <a className="navButton" href="/">
+          EXPLORE
+        </a>
+        <a className="navButton" href="/">
+          MY STUDY
+        </a>
+        <a className="navButton" href="/">
+          CREATE
+        </a>
       </div>
     </nav>
   );
