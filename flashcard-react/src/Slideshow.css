@@ -29,13 +29,11 @@
   height: 6px;
   width: 32px;
   border-radius: 10%;
-
   cursor: pointer;
   margin: 10px 4px;
-
-  background-color: #fcedde;
+  background-color: #f0f6fa;
 }
 
 .slideshowDot.active {
-  background-color: #825f44;
+  background-color: #d0e7f1;
 }

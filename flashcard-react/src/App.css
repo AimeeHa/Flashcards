@@ -10,7 +10,7 @@
 }
 
 #banner {
-  color: #683811;
+  color: #444647;
   font-weight: 600;
   font-size: 24px;
   padding: 12px 12px 0px 12px;
@@ -27,17 +27,17 @@
 #lower-half > div {
   padding: 20px;
   width: 100%;
-  color: #4c321d;
+  color: #444647;
 }
 
 #two {
-  background-color: #fcedde;
+  background-color: #f0f6fa;
 }
 
 #three {
-  background-color: #f9e8d6;
+  background-color: #e7f1f6;
 }
 
 #four {
-  background-color: #f4decb;
+  background-color: #d9ebf3;
 }
