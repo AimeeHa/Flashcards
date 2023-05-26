@@ -19,10 +19,10 @@ function Navbar() {
           EXPLORE
         </a>
         <a className="navButton" href="/">
-          MY STUDY
+          CREATE
         </a>
         <a className="navButton" href="/">
-          CREATE
+          MY STUDY
         </a>
       </div>
     </nav>

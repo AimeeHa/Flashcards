@@ -13,10 +13,10 @@ function App() {
         <div id="banner">
           <Slideshow></Slideshow>
         </div>
-        <div id="lower-half">
-          <div id="two">Hello</div>
-          <div id="three">Hello</div>
-          <div id="four">Hello</div>
+        <div className="lower-half">
+          <div className="lower-half two">Hello</div>
+          <div className="lower-half three">Hello</div>
+          <div className="lower-half four">Hello</div>
         </div>
       </div>
     </>

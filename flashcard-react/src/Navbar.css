@@ -30,12 +30,12 @@
 }
 
 #login {
-  border: #3d808e 1px solid;
+  border: #3d808e 2px solid;
   border-radius: 6px;
   padding: 2px 8px;
   text-decoration: none;
   color: #3d808e;
-  font-weight: 500;
+  font-weight: 550;
   font-size: 16px;
 }
 
@@ -58,15 +58,15 @@
 .navButton {
   text-decoration: none;
   color: #444647;
-  font-weight: 500;
+  font-weight: 550;
   font-size: 16px;
   padding: 2px 8px;
-  border: transparent 1px solid;
+  border: transparent 2px solid;
   pointer-events: auto;
 }
 
 .navButton:hover {
-  border: #3d808e 1px solid;
+  border: #3d808e 2px solid;
   background-color: #3d808e;
   color: #ffffff;
   border-radius: 6px;

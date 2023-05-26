@@ -17,27 +17,26 @@
   height: 500px;
 }
 
-#lower-half {
+.lower-half {
   display: flex;
   justify-content: center;
   width: 100%;
   flex-grow: 1;
-}
-
-#lower-half > div {
-  padding: 20px;
-  width: 100%;
   color: #444647;
 }
 
-#two {
+.lower-half > div {
+  padding: 20px;
+}
+
+.two {
   background-color: #f0f6fa;
 }
 
-#three {
+.three {
   background-color: #e7f1f6;
 }
 
-#four {
+.four {
   background-color: #d9ebf3;
 }
