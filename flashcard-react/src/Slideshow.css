@@ -7,15 +7,15 @@
 
 .slideshowSlider {
   white-space: nowrap;
-  transition: ease 1000ms;
+  transition: ease 1500ms;
 }
 
 .slide {
   display: inline-block;
-  min-height: 380px;
+  min-height: 460px;
   width: 100%;
   border-radius: 10px;
-  background-color: #e0b694;
+  text-align: center;
 }
 
 /* Buttons */
@@ -33,9 +33,9 @@
   cursor: pointer;
   margin: 10px 4px;
 
-  background-color: #f4decb;
+  background-color: #fcedde;
 }
 
 .slideshowDot.active {
-  background-color: #a56b3b;
+  background-color: #825f44;
 }

@@ -10,12 +10,11 @@
 }
 
 #banner {
-  background-color: #e0b694;
   color: #683811;
   font-weight: 600;
   font-size: 24px;
   padding: 12px 12px 0px 12px;
-  height: 410px;
+  height: 500px;
 }
 
 #lower-half {
@@ -31,8 +30,12 @@
   color: #4c321d;
 }
 
+#two {
+  background-color: #fcedde;
+}
+
 #three {
-  background-color: #f3e7d7;
+  background-color: #f9e8d6;
 }
 
 #four {
