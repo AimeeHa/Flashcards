@@ -18,6 +18,33 @@
   text-align: center;
 }
 
+.slide > div {
+  margin: 12px;
+}
+
+.slideButton {
+  display: flex;
+  margin-top: 24px;
+  color: #3d808e;
+  font-weight: 700;
+  font-size: 17px;
+  justify-content: center;
+  gap: 4px;
+}
+
+.slideButton a {
+  text-decoration: none;
+  color: #3d808e;
+}
+
+.slideButtonArrow {
+  transition: ease 250ms;
+}
+
+.slideButton:hover .slideButtonArrow {
+  transform: translateX(16px);
+}
+
 /* Buttons */
 
 .slideshowDots {
