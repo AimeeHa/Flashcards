@@ -8,10 +8,10 @@ function App() {
     <>
       <div id="homepage">
         <div>
-          <Navbar></Navbar>
+          <Navbar />
         </div>
         <div id="banner">
-          <Slideshow></Slideshow>
+          <Slideshow />
         </div>
         <div className="lower-half">
           <div className="lower-half two">Hello</div>

@@ -59,7 +59,7 @@ function Slideshow() {
             <div className="slideButton">
               <a href={link}>See more</a>
               <div className="slideButtonArrow">
-                <EastRoundedIcon></EastRoundedIcon>
+                <EastRoundedIcon />
               </div>
             </div>
           </div>
