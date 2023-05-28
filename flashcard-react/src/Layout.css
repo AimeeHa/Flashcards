@@ -1,7 +1,7 @@
 #main {
-  margin: 24px;
-  padding: 22px;
+  padding: 24px 48px;
   color: #444647;
   font-weight: 450;
   font-size: 18px;
+  /* border-top: #e0e0e0 1px solid; */
 }

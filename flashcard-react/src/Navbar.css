@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Philosopher');
+
 .navbarRoot {
   display: flex;
   flex-direction: row;
@@ -18,9 +20,8 @@
 }
 
 #aimee {
-  color: #444647;
-  font-size: 28px;
   margin-left: 24px;
+  font-family: 'Philosopher', sans-serif;
 }
 
 .loginButtons {

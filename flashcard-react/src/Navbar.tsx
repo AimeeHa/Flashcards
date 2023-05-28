@@ -6,7 +6,15 @@ function Navbar() {
     <nav className="navbarRoot">
       <div className="navEnds">
         <div id="aimee">
-          <a href="/" style={{ textDecoration: 'none', color: '#444647' }}>
+          <a
+            href="/"
+            style={{
+              textDecoration: 'none',
+              color: '#2c393d',
+              paddingTop: '4px',
+              fontSize: '34px',
+            }}
+          >
             Aimee's Cards
           </a>
         </div>
