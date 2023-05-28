@@ -54,14 +54,25 @@ function Slideshow() {
       >
         {slides.map(({ title, content, link }, index) => (
           <div className="slide" key={index}>
-            <div>{title}</div>
-            <div>{content}</div>
-            <div className="slideButton">
-              <a href={link}>See more</a>
-              <div className="slideButtonArrow">
-                <EastRoundedIcon />
+            <div className="wordContents">
+              <div>{title}</div>
+              <div>{content}</div>
+              <div className="slideButton">
+                <a href={link}>See more</a>
+                <div className="slideButtonArrow">
+                  <EastRoundedIcon />
+                </div>
               </div>
             </div>
+
+            {/* testing */}
+            <img
+              className="imgContent"
+              src="https://i.etsystatic.com/28084276/r/il/b3aaa4/2950809301/il_1588xN.2950809301_hr8h.jpg"
+              alt="test"
+              height="300px"
+              width="450px"
+            />
           </div>
         ))}
       </div>
