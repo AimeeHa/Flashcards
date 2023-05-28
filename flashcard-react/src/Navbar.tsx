@@ -1,12 +1,17 @@
 import './Navbar.css';
 
+// TODO: Fix all nav links
 function Navbar() {
   return (
     <nav className="navbarRoot">
       <div className="navEnds">
-        <div id="aimee">Aimee's Cards</div>
+        <div id="aimee">
+          <a href="/" style={{ textDecoration: 'none', color: '#444647' }}>
+            Aimee's Cards
+          </a>
+        </div>
         <div className="loginButtons">
-          <a id="login" href="/">
+          <a id="login" href="/login">
             LOG IN
           </a>
         </div>
@@ -15,7 +20,7 @@ function Navbar() {
         <a className="navButton" href="/">
           HOME
         </a>
-        <a className="navButton" href="/">
+        <a className="navButton" href="/explore">
           EXPLORE
         </a>
         <a className="navButton" href="/">

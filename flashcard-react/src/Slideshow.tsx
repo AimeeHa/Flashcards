@@ -11,7 +11,7 @@ const slides: Slide[] = [
   {
     title: 'Slide 1',
     content: 'Slide 1 content',
-    link: 'https://www.google.com',
+    link: '/explore',
   },
   { title: 'Slide 2', content: 'Slide 2 content', link: '/' },
   {
