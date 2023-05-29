@@ -49,15 +49,21 @@
   align-self: center;
   font-size: 16px;
   font-weight: 550;
-  margin-bottom: 36px;
 }
 
-.main-message {
+.terms {
+  font-size: 36px;
+  font-weight: 450;
+  align-self: center;
+}
+
+.contact-message {
   font-size: 14px;
   font-weight: 450;
+  margin-top: 36px;
 }
 
-.smaller-note {
+.contact-note {
   font-size: 10px;
   font-weight: 450;
 }
