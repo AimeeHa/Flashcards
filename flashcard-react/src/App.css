@@ -82,6 +82,11 @@ button {
   font-weight: 600;
   cursor: pointer;
   transition: ease 250ms;
+  opacity: 80%;
+}
+
+button:hover {
+  opacity: 100%;
 }
 
 .view-definition {
