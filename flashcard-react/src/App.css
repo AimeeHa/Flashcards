@@ -25,28 +25,24 @@
   color: #444647;
 }
 
-.one {
-  background-color: #f0f6fa;
+.one,
+.two,
+.three {
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.one {
+  background-color: #f0f6fa;
 }
 
 .two {
   background-color: #e7f1f6;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
 .three {
   background-color: #d9ebf3;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 20px;
 }
 
 .article-header {
@@ -68,7 +64,7 @@
 
 .leave-message {
   align-self: center;
-  flex-grow: 1;
+  flex-grow: 0.5;
   display: flex;
   justify-content: center;
   flex-direction: column;

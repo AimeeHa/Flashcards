@@ -43,7 +43,7 @@ function App() {
               to reach out!
             </div>
             <div className="smaller-note">
-              (Or even if you just want to tell a random story &#128521;)
+              (Or even if you just want to share a random story &#128521;)
             </div>
             <div className="leave-message">
               <button>Leave Aimee a message</button>
