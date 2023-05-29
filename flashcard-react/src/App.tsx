@@ -8,14 +8,14 @@ function App() {
   return (
     <>
       <div id="homepage">
-        <div>
+        <div className="navbar">
           <Navbar />
         </div>
-        <div id="banner">
+        <div className="banner">
           <Slideshow />
         </div>
-        <div className="article">
-          <div className="article one">
+        <div className="articles">
+          <div className="articles one">
             <div className="article-header">RANDOM TERM OF THE DAY</div>
             <div className="main-message"></div>
             <div className="view-definition">
@@ -25,7 +25,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="article two">
+          <div className="articles two">
             <div className="article-header">RANDOM TERM OF THE DAY</div>
             <div className="main-message"></div>
             <div className="view-definition">
@@ -35,7 +35,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="article three">
+          <div className="articles three">
             <div className="article-header">CONTACT US</div>
             <div className="main-message">
               If you have encountered any issues while using Aimee's Cards, or

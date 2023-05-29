@@ -9,7 +9,7 @@
   min-height: 100vh;
 }
 
-#banner {
+.banner {
   color: #444647;
   font-weight: 600;
   font-size: 24px;
@@ -17,7 +17,7 @@
   height: 480px;
 }
 
-.article {
+.articles {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -53,7 +53,7 @@
   align-self: center;
   font-size: 16px;
   font-weight: 550;
-  margin-bottom: 12px;
+  margin-bottom: 36px;
 }
 
 .main-message {
@@ -64,11 +64,14 @@
 .smaller-note {
   font-size: 10px;
   font-weight: 450;
-  margin-bottom: 48px;
 }
 
 .leave-message {
   align-self: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 button {
