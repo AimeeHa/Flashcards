@@ -20,7 +20,7 @@ const slides: Slide[] = [
     link: 'https://www.facebook.com',
   },
 ];
-const delay = 3000;
+const delay = 3500;
 
 function Slideshow() {
   const [index, setIndex] = useState(0);
@@ -60,7 +60,7 @@ function Slideshow() {
               <div className="slideButton">
                 <a href={link}>See more</a>
                 <div className="slideButtonArrow">
-                  <EastRoundedIcon />
+                  <EastRoundedIcon style={{ width: '0.9em' }} />
                 </div>
               </div>
             </div>

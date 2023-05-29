@@ -39,10 +39,12 @@
 
 .slideButtonArrow {
   transition: ease 250ms;
+  cursor: pointer;
 }
 
 .slideButton:hover .slideButtonArrow {
   transform: translateX(16px);
+  cursor: pointer;
 }
 
 /* Buttons */

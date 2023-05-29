@@ -17,7 +17,7 @@
   height: 480px;
 }
 
-.lower-half {
+.article {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -25,18 +25,86 @@
   color: #444647;
 }
 
-.lower-half > div {
+.one {
+  background-color: #f0f6fa;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .two {
-  background-color: #f0f6fa;
+  background-color: #e7f1f6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .three {
-  background-color: #e7f1f6;
+  background-color: #d9ebf3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
 }
 
-.four {
-  background-color: #d9ebf3;
+.article-header {
+  align-self: center;
+  font-size: 16px;
+  font-weight: 550;
+  margin-bottom: 12px;
+}
+
+.main-message {
+  font-size: 14px;
+  font-weight: 450;
+}
+
+.smaller-note {
+  font-size: 10px;
+  font-weight: 450;
+  margin-bottom: 48px;
+}
+
+.leave-message {
+  align-self: center;
+}
+
+button {
+  font: inherit;
+  width: max-content;
+  background-color: #3d808e;
+  color: #f0f6fa;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: ease 250ms;
+}
+
+.view-definition {
+  display: flex;
+  margin-top: 12px;
+  color: #3d808e;
+  font-weight: 600;
+  font-size: 14px;
+  justify-content: center;
+  gap: 4px;
+}
+
+.view-definition a {
+  text-decoration: none;
+  color: #3d808e;
+}
+
+.view-arrow {
+  transition: ease 250ms;
+}
+
+.view-definition:hover .view-arrow {
+  transform: translateX(8px);
+  cursor: pointer;
 }
