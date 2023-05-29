@@ -1,6 +1,6 @@
 import EastRoundedIcon from '@mui/icons-material/EastRounded';
 
-function RandomTerm(category: string) {
+function getRandomTerm(category: string) {
   return (
     <div
       style={{
@@ -25,4 +25,4 @@ function RandomTerm(category: string) {
   );
 }
 
-export default RandomTerm;
+export default getRandomTerm;

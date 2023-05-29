@@ -2,7 +2,7 @@
 import './App.css';
 import Slideshow from './Slideshow';
 import Navbar from './Navbar';
-import RandomTerm from './RandomTerm';
+import getRandomTerm from './getRandomTerm';
 
 function App() {
   return (
@@ -18,12 +18,12 @@ function App() {
         <div className="articles">
           <div className="articles one">
             <div className="article-header">TECHNOLOGY TERM OF THE DAY</div>
-            {RandomTerm('TECH')}
+            {getRandomTerm('TECH')}
           </div>
 
           <div className="articles two">
             <div className="article-header">ENGLISH WORD OF THE DAY</div>
-            {RandomTerm('ENG')}
+            {getRandomTerm('ENG')}
           </div>
 
           <div className="articles three">
