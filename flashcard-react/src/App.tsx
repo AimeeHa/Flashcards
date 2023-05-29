@@ -2,7 +2,7 @@
 import './App.css';
 import Slideshow from './Slideshow';
 import Navbar from './Navbar';
-import EastRoundedIcon from '@mui/icons-material/EastRounded';
+import RandomTerm from './RandomTerm';
 
 function App() {
   return (
@@ -17,45 +17,13 @@ function App() {
 
         <div className="articles">
           <div className="articles one">
-            <div className="article-header">RANDOM TERM OF THE DAY</div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                flexGrow: 0.8,
-                gap: '12px',
-              }}
-            >
-              <div className="terms">{/* TODO: */} AAAAA</div>
-              <div className="view-definition">
-                <div>What's this?</div>
-                <div className="view-arrow">
-                  <EastRoundedIcon style={{ width: '0.6em' }} />
-                </div>
-              </div>
-            </div>
+            <div className="article-header">TECHNOLOGY TERM OF THE DAY</div>
+            {RandomTerm('TECH')}
           </div>
 
           <div className="articles two">
-            <div className="article-header">RANDOM TERM OF THE DAY</div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                flexGrow: 0.8,
-                gap: '12px',
-              }}
-            >
-              <div className="terms">{/* TODO: */} BBBBB</div>
-              <div className="view-definition">
-                <div>What's this?</div>
-                <div className="view-arrow">
-                  <EastRoundedIcon style={{ width: '0.6em' }} />
-                </div>
-              </div>
-            </div>
+            <div className="article-header">ENGLISH WORD OF THE DAY</div>
+            {RandomTerm('ENG')}
           </div>
 
           <div className="articles three">
