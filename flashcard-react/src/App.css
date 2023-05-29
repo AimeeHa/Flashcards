@@ -105,8 +105,8 @@ button:hover {
   gap: 4px;
 }
 
-.view-definition a {
-  text-decoration: none;
+.view-definition {
+  cursor: pointer;
   color: #3d808e;
 }
 

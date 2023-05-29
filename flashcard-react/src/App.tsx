@@ -14,6 +14,7 @@ function App() {
         <div className="banner">
           <Slideshow />
         </div>
+
         <div className="articles">
           <div className="articles one">
             <div className="article-header">RANDOM TERM OF THE DAY</div>
@@ -28,13 +29,14 @@ function App() {
             >
               <div className="terms">{/* TODO: */} AAAAA</div>
               <div className="view-definition">
-                <a href="">What's this?</a>
+                <div>What's this?</div>
                 <div className="view-arrow">
                   <EastRoundedIcon style={{ width: '0.6em' }} />
                 </div>
               </div>
             </div>
           </div>
+
           <div className="articles two">
             <div className="article-header">RANDOM TERM OF THE DAY</div>
             <div
@@ -48,13 +50,14 @@ function App() {
             >
               <div className="terms">{/* TODO: */} BBBBB</div>
               <div className="view-definition">
-                <a href="">What's this?</a>
+                <div>What's this?</div>
                 <div className="view-arrow">
                   <EastRoundedIcon style={{ width: '0.6em' }} />
                 </div>
               </div>
             </div>
           </div>
+
           <div className="articles three">
             <div className="article-header">CONTACT US</div>
             <div className="contact-message">

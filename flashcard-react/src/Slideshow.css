@@ -12,14 +12,10 @@
 
 .slide {
   display: inline-block;
-  min-height: 440px;
+
   width: 100%;
   border-radius: 10px;
   text-align: center;
-}
-
-.slide > div {
-  margin: 12px;
 }
 
 .slideButton {
@@ -65,4 +61,12 @@
 
 .slideshowDot.active {
   background-color: #d0e7f1;
+}
+
+.slide-overall {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 440px;
 }
