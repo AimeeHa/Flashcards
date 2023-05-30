@@ -1,6 +1,5 @@
 // import { useState } from 'react';
 import './App.css';
-import Slideshow from './Slideshow';
 import Navbar from './Navbar';
 import getRandomTerm from './getRandomTerm';
 
@@ -11,9 +10,7 @@ function App() {
         <div className="navbar">
           <Navbar />
         </div>
-        <div className="banner">
-          <Slideshow />
-        </div>
+        <div className="banner"></div>
 
         <div className="articles">
           <div className="articles one">

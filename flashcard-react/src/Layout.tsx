@@ -1,13 +1,17 @@
 import './Layout.css';
 import Navbar from './Navbar';
 
-export default function Layout({}) {
+interface Props {
+  children: React.ReactNode;
+}
+
+function Layout(props: Props) {
   return (
-    <>
+    <div id="layout">
       <Navbar />
-      <div id="main">
-        <div>Will be there soon.</div>
-      </div>
-    </>
+      {props.children}
+    </div>
   );
 }
+
+export default Layout;

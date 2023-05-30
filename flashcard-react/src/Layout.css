@@ -1,7 +1,11 @@
-#main {
-  padding: 24px 48px;
+#layout {
+  width: 100vw;
+  height: 100vh;
   color: #444647;
   font-weight: 450;
-  font-size: 18px;
-  /* border-top: #e0e0e0 1px solid; */
+  font-size: 16px;
+}
+
+#layout > div {
+  padding: 16px 48px;
 }

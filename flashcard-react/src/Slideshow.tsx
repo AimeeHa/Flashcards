@@ -30,6 +30,20 @@ const slides: Slide[] = [
     imgLink:
       'https://assets.onbuy.com/i14/product/fbe126f2823c4ab39a648328021e8246-m288884856/high-contrast-flash-cards-for-babies-20-cards-40-pages-84-x-84-black-white-card-newborn-infant-toys.jpg',
   },
+  {
+    title: 'Slide 4',
+    content: 'Slide 4 content',
+    link: '/',
+    imgLink:
+      'https://assets.onbuy.com/i14/product/fbe126f2823c4ab39a648328021e8246-m288884856/high-contrast-flash-cards-for-babies-20-cards-40-pages-84-x-84-black-white-card-newborn-infant-toys.jpg',
+  },
+  {
+    title: 'Slide 5',
+    content: 'Slide 5 content',
+    link: '/',
+    imgLink:
+      'https://assets.onbuy.com/i14/product/fbe126f2823c4ab39a648328021e8246-m288884856/high-contrast-flash-cards-for-babies-20-cards-40-pages-84-x-84-black-white-card-newborn-infant-toys.jpg',
+  },
 ];
 const delay = 3500;
 
@@ -83,7 +97,7 @@ function Slideshow() {
                 src={imgLink}
                 alt="test"
                 height="300px"
-                width="450px"
+                width="400px"
               />
             </div>
           </div>
