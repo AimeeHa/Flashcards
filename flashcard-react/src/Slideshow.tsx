@@ -45,7 +45,7 @@ const slides: Slide[] = [
       'https://assets.onbuy.com/i14/product/fbe126f2823c4ab39a648328021e8246-m288884856/high-contrast-flash-cards-for-babies-20-cards-40-pages-84-x-84-black-white-card-newborn-infant-toys.jpg',
   },
 ];
-const delay = 3500;
+const delay = 3000;
 
 function Slideshow() {
   const [index, setIndex] = useState(0);

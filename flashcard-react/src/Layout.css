@@ -8,4 +8,14 @@
 
 #layout > div {
   padding: 16px 48px;
+  animation: 1s ease-out 0s 1 slideUp;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
