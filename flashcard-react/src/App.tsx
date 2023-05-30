@@ -10,7 +10,11 @@ function App() {
         <div className="navbar">
           <Navbar />
         </div>
-        <div className="banner"></div>
+
+        <div className="banner">
+          <div className="banner-title">SAYING SOMETHING</div>
+          <div className="banner-texts">Keep sayingingingingingnginging</div>
+        </div>
 
         <div className="articles">
           <div className="articles one">

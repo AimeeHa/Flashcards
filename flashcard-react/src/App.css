@@ -21,10 +21,23 @@
 .banner {
   animation: 1s ease-out 0s 1 slideUp;
   color: #444647;
+  padding: 12px 48px 0px 48px;
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner-title {
+  align-self: center;
   font-weight: 600;
   font-size: 24px;
-  padding: 12px 12px 0px 12px;
-  min-height: 440px;
+}
+
+.banner-texts {
+  align-self: center;
+  font-weight: 450;
+  font-size: 16px;
 }
 
 .articles {
