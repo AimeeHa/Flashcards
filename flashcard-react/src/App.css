@@ -3,6 +3,7 @@
     transform: translateY(50%);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
@@ -21,10 +22,10 @@
 }
 
 .banner {
-  animation: 1s ease-out 0s 1 slideUp;
+  animation: 2s ease-out slideUp;
   color: #444647;
   padding: 12px 48px 0px 48px;
-  min-height: 440px;
+  min-height: calc(100vh * 0.55);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +44,7 @@
 }
 
 .articles {
-  animation: 1s ease-out 0s 1 slideUp;
+  animation: 2s ease-out slideUp;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -95,6 +96,7 @@
 }
 
 .leave-message {
+  margin-top: 12px;
   align-self: center;
   flex-grow: 0.5;
   display: flex;

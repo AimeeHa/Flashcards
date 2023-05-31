@@ -8,16 +8,22 @@
 
 #layout > div {
   padding: 16px 48px;
-  animation: 1s ease-out 0s 1 slideUp;
+  animation: onLoad 1s ease-out;
 }
 
-@keyframes slideUp {
+@keyframes onLoad {
   0% {
-    transform: translateY(30%);
+    transform: translateX(-2.5%);
     opacity: 0;
   }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.7;
+  }
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
