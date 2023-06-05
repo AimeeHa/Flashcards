@@ -10,26 +10,26 @@
   padding: 18px 24px 12px;
   height: 36px;
   align-items: center;
-  gap: 120px;
+  gap: 36px;
 }
 
 .navbarLeft {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  flex-grow: 1;
+  gap: 16px;
+  padding: 0;
 }
 
 .navbarRight {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
 #aimee a {
-  margin: 0px 12px;
+  margin: 0px 0px 0px 12px;
   font-family: 'Philosopher', sans-serif;
   color: #224851;
   text-decoration: none;
@@ -37,18 +37,8 @@
   font-size: 34px;
 }
 
-#login {
-  text-decoration: none;
-  color: #444647;
-  font-weight: 550;
-  font-size: 14px;
-  padding: 2px 8px;
-  border: transparent 2px solid;
-  pointer-events: auto;
-  transition: ease 300ms;
-}
-
 #register {
+  display: block;
   border: #3d808e 2px solid;
   border-radius: 6px;
   padding: 2px 8px;
@@ -59,44 +49,82 @@
   transition: ease 300ms;
 }
 
-#register:hover {
-  opacity: 80%;
-  background-color: #3d808e;
-  color: #ffffff;
-  box-shadow: 0px 2px 6px 0px #66c3d6;
+.navButton {
+  list-style-type: none;
 }
 
-.navButton {
+.navLink,
+#login {
+  display: block;
+  padding: 2px 8px;
   text-decoration: none;
   color: #444647;
   font-weight: 550;
   font-size: 14px;
-  padding: 2px 8px;
   border: transparent 2px solid;
   pointer-events: auto;
   transition: ease 300ms;
 }
 
-.navButton:hover,
-#login:hover {
+.navButton a:hover,
+#login:hover,
+#register:hover {
   /* border: #3d808e 2px solid; */
   background-color: #3d808e;
   color: #ffffff;
   border-radius: 6px;
-  opacity: 80%;
   box-shadow: 0px 2px 6px 0px #66c3d6;
 }
 
 #searchbox {
   display: flex;
   flex-grow: 1;
+  background-color: #f6f7fb;
+  border: #eceff4 1px solid;
+  border-radius: 76px;
 }
 
 #searchbox input {
-  padding: 8px;
-  width: 100%;
-  border: #eceff4 1px solid;
   border-radius: 76px;
-  background-color: #f6f7fb;
+  font-family: inherit;
+  padding: 8px 16px 8px 38px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
   font-size: 14px;
+  text-overflow: ellipsis;
+  /* background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 12px center; */
+  background: transparent;
+  background-image: url('https://www.pngall.com/wp-content/uploads/13/Search-Button-PNG-Image.png');
+  background-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+}
+
+#searchbox input:focus {
+  outline: none;
+  border: #54858f 1px solid;
+  box-shadow: 0px 2px 6px 0px #66c3d6;
+  background-color: #ffffff;
+}
+
+.navMenuButton {
+  display: none;
+}
+
+@media (width < 1000px) {
+  .navbarLeft {
+    display: none;
+  }
+
+  .navbarLeft.small {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navMenuButton {
+    display: block;
+  }
 }

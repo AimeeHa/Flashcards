@@ -1,36 +1,60 @@
 import './Navbar.css';
+import { useState } from 'react';
 
 // TODO: Fix all nav links
 function Navbar() {
+  const [showMenu, setShowMenu] = useState(false);
+
   return (
     <nav className="navbarRoot">
-      <div className="navbarLeft">
-        <div id="aimee">
-          <a href="/">Aimee's Cards</a>
-        </div>
-        <a className="navButton" href="/">
-          MY STUDY
-        </a>
-        <a className="navButton" href="/explore">
-          EXPLORE
-        </a>
-        <a className="navButton" href="/">
-          CREATE
-        </a>
-        {/* TODO: */}
-        <form id="searchbox" action="/search">
-          <input type="text" placeholder="Search for a card here"></input>
-        </form>
+      <div id="aimee">
+        <a href="/">Aimee's Cards</a>
       </div>
+      <button
+        className="navMenuButton"
+        onClick={() => {
+          setShowMenu(!showMenu);
+        }}
+      ></button>
+      <ul className={showMenu ? 'navbarLeft small' : 'navbarLeft'}>
+        <li className="navButton">
+          <a className="navLink" href="/">
+            MY STUDY
+          </a>
+        </li>
+        <li className="navButton">
+          <a className="navLink" href="/explore">
+            EXPLORE
+          </a>
+        </li>
+        <li className="navButton">
+          <a className="navLink" href="/">
+            CREATE
+          </a>
+        </li>
+      </ul>
 
-      <div className="navbarRight">
-        <a id="login" href="/login">
-          LOG IN
-        </a>
-        <a id="register" href="/register">
-          REGISTER
-        </a>
-      </div>
+      {/* TODO: */}
+      <form id="searchbox" action="/search">
+        <input
+          type="search"
+          placeholder="Enter to search a flashcard, study set, ..."
+        ></input>
+      </form>
+
+      <ul className="navbarRight">
+        <li className="navButton">
+          <a id="login" href="/login">
+            LOG IN
+          </a>
+        </li>
+        <li className="navButton">
+          {' '}
+          <a id="register" href="/register">
+            REGISTER
+          </a>
+        </li>
+      </ul>
     </nav>
   );
 }
