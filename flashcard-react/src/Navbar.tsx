@@ -4,29 +4,12 @@ import './Navbar.css';
 function Navbar() {
   return (
     <nav className="navbarRoot">
-      <div className="navEnds">
+      <div className="navbarLeft">
         <div id="aimee">
-          <a
-            href="/"
-            style={{
-              textDecoration: 'none',
-              color: '#2c393d',
-              paddingTop: '4px',
-              fontSize: '34px',
-            }}
-          >
-            Aimee's Cards
-          </a>
+          <a href="/">Aimee's Cards</a>
         </div>
-        <div className="loginButtons">
-          <a id="login" href="/login">
-            LOG IN
-          </a>
-        </div>
-      </div>
-      <div className="navButtonGroup">
         <a className="navButton" href="/">
-          HOME
+          MY STUDY
         </a>
         <a className="navButton" href="/explore">
           EXPLORE
@@ -34,8 +17,18 @@ function Navbar() {
         <a className="navButton" href="/">
           CREATE
         </a>
-        <a className="navButton" href="/">
-          MY STUDY
+        {/* TODO: */}
+        <form id="searchbox" action="/search">
+          <input type="text" placeholder="Search for a card here"></input>
+        </form>
+      </div>
+
+      <div className="navbarRight">
+        <a id="login" href="/login">
+          LOG IN
+        </a>
+        <a id="register" href="/register">
+          REGISTER
         </a>
       </div>
     </nav>
