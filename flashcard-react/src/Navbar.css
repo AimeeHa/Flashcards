@@ -64,10 +64,10 @@
   font-size: 14px;
   border: transparent 2px solid;
   pointer-events: auto;
-  transition: ease 300ms;
+  transition: linear 200ms;
 }
 
-.navButton a:hover,
+.navLink:hover,
 #login:hover,
 #register:hover {
   /* border: #3d808e 2px solid; */
@@ -99,6 +99,7 @@
   background-size: 14px;
   background-repeat: no-repeat;
   background-position: 12px center;
+  transition: linear 100ms;
 }
 
 #searchbox input:focus {
@@ -106,9 +107,14 @@
   border: #54858f 1px solid;
   box-shadow: 0px 2px 6px 0px #66c3d6;
   background-color: #ffffff;
+  transition: linear 100ms;
 }
 
 .navMenuButton {
+  display: none;
+}
+
+.navbarMenu {
   display: none;
 }
 
@@ -130,45 +136,76 @@
     gap: 16px;
   }
 
-  .navbarLeft.small {
+  .navbarLeft.hidden,
+  .navbarRight.hidden {
+    display: none;
+  }
+
+  .navbarMenu.show {
     display: flex;
     flex-direction: column;
     gap: 2px;
     position: absolute;
-    top: 60px;
     left: 24px;
+    top: 64px;
+    padding: 0;
+    z-index: 1;
+    background-color: #3d808e;
+    border: transparent 2px solid;
+    border-radius: 6px;
+    animation: dropDown 0.5s ease-out;
   }
 
   .navLink,
   #login,
   #register {
-    width: 69px;
+    width: 100px;
     text-align: start;
+    color: #ffffff;
+  }
+
+  #register {
+    border: transparent 2px solid;
   }
 
   .navLink:hover,
   #login:hover,
   #register:hover {
-    background-color: #3d808e;
-    color: #ffffff;
-    border-radius: 6px;
-    box-shadow: 0px 2px 6px 0px #66c3d6;
-  }
-
-  .navbarRight.small {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    position: absolute;
-    top: 162px;
-    left: 24px;
+    background-color: #ffffff;
+    color: #3d808e;
+    border-radius: 0px;
+    box-shadow: none;
+    border: #ffffff 2px solid;
+    transition: linear 200ms;
   }
 
   .navMenuButton {
     display: block;
     background-color: #ffffff;
     border: none;
-    padding: 3px 0px 0px;
+    border-radius: 6px;
+    padding: 4px;
     cursor: pointer;
+  }
+
+  .navMenuButton.clicked {
+    background-color: #3d808e;
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateY(-5%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
