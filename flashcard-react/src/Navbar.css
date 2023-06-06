@@ -26,6 +26,7 @@
   flex-direction: row;
   align-items: center;
   gap: 16px;
+  padding: 0;
 }
 
 #aimee a {
@@ -115,16 +116,67 @@
 }
 
 @media (width < 1000px) {
-  .navbarLeft {
+  #aimee a {
+    display: block;
+    width: 206px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbarLeft,
+  .navbarRight {
     display: none;
+  }
+
+  .navbarRoot {
+    display: flex;
+    gap: 16px;
   }
 
   .navbarLeft.small {
     display: flex;
     flex-direction: column;
+    gap: 2px;
+    position: absolute;
+    top: 60px;
+    left: 24px;
+  }
+
+  .navLink,
+  #login,
+  #register {
+    width: 69px;
+    text-align: start;
+  }
+
+  .navLink:hover,
+  #login:hover,
+  #register:hover {
+    background-color: #3d808e;
+    color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px 0px #66c3d6;
+  }
+
+  .navbarRight.small {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    position: absolute;
+    top: 162px;
+    left: 24px;
   }
 
   .navMenuButton {
     display: block;
+    height: 40px;
+    width: 48px;
+    border: none;
+    background-color: transparent;
+    background-image: url('https://www.svgrepo.com/show/506246/menu-hamburger.svg');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    cursor: pointer;
   }
 }

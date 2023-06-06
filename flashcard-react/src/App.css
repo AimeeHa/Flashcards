@@ -109,7 +109,7 @@
   flex-direction: column;
 }
 
-button {
+.leave-message button {
   font: inherit;
   width: max-content;
   background-color: #3d808e;
@@ -124,7 +124,7 @@ button {
   opacity: 80%;
 }
 
-button:hover {
+.leave-message button:hover {
   opacity: 100%;
   box-shadow: 0px 2px 6px 0px #66c3d6;
 }

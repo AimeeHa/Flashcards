@@ -7,15 +7,17 @@ function Navbar() {
 
   return (
     <nav className="navbarRoot">
-      <div id="aimee">
-        <a href="/">Aimee's Cards</a>
-      </div>
       <button
         className="navMenuButton"
         onClick={() => {
           setShowMenu(!showMenu);
         }}
       ></button>
+
+      <div id="aimee">
+        <a href="/">Aimee's Cards</a>
+      </div>
+
       <ul className={showMenu ? 'navbarLeft small' : 'navbarLeft'}>
         <li className="navButton">
           <a className="navLink" href="/">
@@ -42,7 +44,7 @@ function Navbar() {
         ></input>
       </form>
 
-      <ul className="navbarRight">
+      <ul className={showMenu ? 'navbarRight small' : 'navbarRight'}>
         <li className="navButton">
           <a id="login" href="/login">
             LOG IN
