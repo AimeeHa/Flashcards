@@ -1,5 +1,6 @@
 import './Navbar.css';
 import { useState } from 'react';
+import { LuMenu } from 'react-icons/lu';
 
 // TODO: Fix all nav links
 function Navbar() {
@@ -12,7 +13,15 @@ function Navbar() {
         onClick={() => {
           setShowMenu(!showMenu);
         }}
-      ></button>
+      >
+        <LuMenu
+          style={{
+            height: 28,
+            width: 28,
+            color: '#224851',
+          }}
+        />
+      </button>
 
       <div id="aimee">
         <a href="/">Aimee's Cards</a>
@@ -36,7 +45,7 @@ function Navbar() {
         </li>
       </ul>
 
-      {/* TODO: */}
+      {/* TODO: Search box*/}
       <form id="searchbox" action="/search">
         <input
           type="search"
@@ -51,7 +60,6 @@ function Navbar() {
           </a>
         </li>
         <li className="navButton">
-          {' '}
           <a id="register" href="/register">
             REGISTER
           </a>
