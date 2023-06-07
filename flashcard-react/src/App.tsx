@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 import './App.css';
+import './Button.css';
 import Navbar from './Navbar';
 import getRandomTerm from './getRandomTerm';
 
@@ -38,7 +39,7 @@ function App() {
               (Or even if you just want to share a random story &#128521;)
             </div>
             <div className="leave-message">
-              <button>Leave Aimee a message</button>
+              <button className="blue-button">Leave Aimee a message</button>
             </div>
           </div>
         </div>

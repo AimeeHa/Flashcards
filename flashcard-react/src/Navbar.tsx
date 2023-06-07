@@ -32,22 +32,22 @@ function Navbar() {
       {/* SMALLER SCREEN MENU LIST */}
       <ul className={showMenu ? 'navbarMenu show' : 'navbarMenu'}>
         <li className="navButton">
-          <a className="navLink" href="/">
+          <a className="white-button" href="/">
             MY STUDY
           </a>
         </li>
         <li className="navButton">
-          <a className="navLink" href="/explore">
+          <a className="white-button" href="/explore">
             EXPLORE
           </a>
         </li>
         <li className="navButton">
-          <a className="navLink" href="/">
+          <a className="white-button" href="/">
             CREATE
           </a>
         </li>
         <li className="navButton">
-          <a id="login" href="/login">
+          <a className="white-button" href="/login">
             LOG IN
           </a>
         </li>
@@ -61,17 +61,17 @@ function Navbar() {
       {/* NORMAL SCREEEN nav buttons */}
       <ul className={showMenu ? 'navbarLeft hidden' : 'navbarLeft'}>
         <li className="navButton">
-          <a className="navLink" href="/">
+          <a className="white-button" href="/">
             MY STUDY
           </a>
         </li>
         <li className="navButton">
-          <a className="navLink" href="/explore">
+          <a className="white-button" href="/explore">
             EXPLORE
           </a>
         </li>
         <li className="navButton">
-          <a className="navLink" href="/">
+          <a className="white-button" href="/">
             CREATE
           </a>
         </li>
@@ -87,7 +87,7 @@ function Navbar() {
 
       <ul className={showMenu ? 'navbarRight small' : 'navbarRight'}>
         <li className="navButton">
-          <a id="login" href="/login">
+          <a className="white-button" href="/login">
             LOG IN
           </a>
         </li>

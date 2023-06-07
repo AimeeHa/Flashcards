@@ -54,21 +54,6 @@
   list-style-type: none;
 }
 
-.navLink,
-#login {
-  display: block;
-  padding: 2px 8px;
-  text-decoration: none;
-  color: #444647;
-  font-weight: 550;
-  font-size: 14px;
-  border: transparent 2px solid;
-  pointer-events: auto;
-  transition: linear 200ms;
-}
-
-.navLink:hover,
-#login:hover,
 #register:hover {
   /* border: #3d808e 2px solid; */
   background-color: #3d808e;
@@ -156,8 +141,7 @@
     animation: dropDown 0.5s ease-out;
   }
 
-  .navLink,
-  #login,
+  .white-button,
   #register {
     width: 100px;
     text-align: start;
@@ -168,8 +152,7 @@
     border: transparent 2px solid;
   }
 
-  .navLink:hover,
-  #login:hover,
+  .white-button:hover,
   #register:hover {
     background-color: #ffffff;
     color: #3d808e;

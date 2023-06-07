@@ -1,0 +1,38 @@
+.blue-button {
+  font: inherit;
+  width: max-content;
+  background-color: #3d808e;
+  color: #f0f6fa;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: ease 300ms;
+  opacity: 80%;
+}
+
+.blue-button:hover {
+  opacity: 100%;
+  box-shadow: 0px 2px 6px 0px #66c3d6;
+}
+
+.white-button {
+  display: block;
+  padding: 2px 8px;
+  text-decoration: none;
+  color: #444647;
+  font-weight: 550;
+  font-size: 14px;
+  border: transparent 2px solid;
+  pointer-events: auto;
+  transition: linear 200ms;
+}
+
+.white-button:hover {
+  background-color: #3d808e;
+  color: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 6px 0px #66c3d6;
+}
