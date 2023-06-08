@@ -1,7 +1,25 @@
+@keyframes onLoad {
+  0% {
+    transform: translateX(-2.5%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 #login-page {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  animation: onLoad 1s ease-out;
 }
 
 .left,
@@ -14,11 +32,15 @@
 
 .left {
   flex-direction: column;
-  background-image: url('https://static.vecteezy.com/system/resources/previews/009/282/197/original/black-and-white-weather-flashcards-for-kids-vector.jpg');
-  background-size: stretch;
-  background-repeat: no-repeat;
+  background-color: #d9ebf3;
+  border-right: #e6f1f6;
 }
 
+.right {
+  flex-direction: column;
+}
+
+/* left side */
 .back-to-home {
   position: absolute;
   top: 24px;
@@ -46,11 +68,13 @@
   cursor: pointer;
 }
 
+/* right side */
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 50%;
+  padding: 8px 0px;
 }
 
 .username,
@@ -58,4 +82,40 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.username label,
+.password label {
+  font-size: 13px;
+  font-weight: 550;
+  color: #727576;
+}
+
+.username input,
+.password input {
+  width: 100%;
+}
+
+.login-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% + 32px);
+}
+
+.link-to-others {
+  color: #3d808e;
+  font-weight: 550;
+  font-size: 13px;
+}
+
+.link-to-others a {
+  text-decoration: none;
+  color: #3d808e;
+}
+
+.link-to-others:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
