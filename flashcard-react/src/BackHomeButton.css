@@ -1,0 +1,26 @@
+.back-to-home {
+  position: absolute;
+  top: 24px;
+  left: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #3d808e;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.back-to-home a {
+  text-decoration: none;
+  color: #3d808e;
+}
+
+#back-arrow {
+  transition: ease 250ms;
+}
+
+.back-to-home:hover #back-arrow {
+  transform: translateX(-8px);
+  cursor: pointer;
+}
