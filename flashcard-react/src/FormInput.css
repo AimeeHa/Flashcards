@@ -1,0 +1,21 @@
+/* for forms' input except search box*/
+
+input {
+  border-radius: 76px;
+  font-family: inherit;
+  padding: 8px 16px;
+  width: 100%;
+  border: #eceff4 1px solid;
+  background-color: #f6f7fb;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  transition: linear 100ms;
+}
+
+input:focus {
+  outline: none;
+  border: #54858f 1px solid;
+  box-shadow: 0px 2px 6px 0px #66c3d6;
+  background-color: #ffffff;
+  transition: linear 100ms;
+}

@@ -1,5 +1,6 @@
 import './Login.css';
 import './Button.css';
+import './FormInput.css';
 
 function Login() {
   return (
@@ -22,7 +23,7 @@ function Login() {
               <label htmlFor="password">Password</label>
               <input type="password" id="password" />
             </div>
-            <div className="loginButton">
+            <div className="login-button">
               <button className="blue-button">Log In</button>
             </div>
           </form>

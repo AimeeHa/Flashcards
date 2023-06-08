@@ -1,21 +1,22 @@
 #login-page {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .left,
 .right {
-  width: 50%;
-  padding: 16px 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
 
 .left {
-  display: flex;
   flex-direction: column;
+
   background-image: url('https://static.vecteezy.com/system/resources/previews/009/282/197/original/black-and-white-weather-flashcards-for-kids-vector.jpg');
   background-size: stretch;
-
   background-repeat: no-repeat;
 }
 
@@ -23,4 +24,12 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 50%;
+}
+
+.username,
+.password {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
