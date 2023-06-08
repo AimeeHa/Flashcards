@@ -20,10 +20,10 @@
 }
 
 #homepage {
-  /* animation: 1s ease-out 0s 1 slideUp; */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .banner {
