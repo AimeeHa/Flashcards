@@ -1,18 +1,24 @@
-import './Login.css';
+import './Register.css';
 import './Button.css';
 import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
 
-function Login() {
+function Register() {
   return (
     <>
-      <div id="login-page">
+      <div id="register-page">
         <div className="left">
           <BackHomeButton />
           <div>Some wordssssssss</div>
         </div>
         <div className="right">
-          <form className="login-form">
+          <form className="register-form">
+            <InputRow
+              id="name"
+              label="Name"
+              placeholder="Type your first name"
+              type="text"
+            />
             <InputRow
               id="email"
               label="Email"
@@ -25,23 +31,20 @@ function Login() {
               placeholder="Type your password"
               type="password"
             />
-            <div className="login-button">
-              <button className="blue-button">Log In</button>
-              <div className="link-to-others">
-                <a href="/resetpassword">Forgot your password?</a>
-              </div>
+            <InputRow
+              id="confirmation"
+              label="Confirm Password"
+              placeholder="Type your password again"
+              type="password"
+            />
+            <div className="register-button">
+              <button className="blue-button">Register</button>
             </div>
           </form>
-          <div
-            className="link-to-others"
-            style={{ width: '50%', textAlign: 'center' }}
-          >
-            <a href="/register">New here? Register an account.</a>
-          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default Login;
+export default Register;

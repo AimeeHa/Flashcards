@@ -10,6 +10,7 @@ input {
   font-size: 14px;
   text-overflow: ellipsis;
   transition: linear 100ms;
+  opacity: 70%;
 }
 
 input:focus {
@@ -19,4 +20,5 @@ input:focus {
   background-color: #ffffff;
   transition: linear 100ms;
   font-weight: 500;
+  opacity: 100%;
 }
