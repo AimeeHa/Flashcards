@@ -1,6 +1,7 @@
 import './Login.css';
 import './Button.css';
 import './FormInput.css';
+import WestRoundedIcon from '@mui/icons-material/WestRounded';
 
 function Login() {
   return (
@@ -8,6 +9,9 @@ function Login() {
       <div id="login-page">
         <div className="left">
           <div className="back-to-home">
+            <div id="back-arrow">
+              <WestRoundedIcon style={{ width: '0.8em' }} />
+            </div>
             <a href="/">Back to Home</a>
           </div>
           <div>Some wordssssssss</div>

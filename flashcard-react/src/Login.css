@@ -14,10 +14,36 @@
 
 .left {
   flex-direction: column;
-
   background-image: url('https://static.vecteezy.com/system/resources/previews/009/282/197/original/black-and-white-weather-flashcards-for-kids-vector.jpg');
   background-size: stretch;
   background-repeat: no-repeat;
+}
+
+.back-to-home {
+  position: absolute;
+  top: 24px;
+  left: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  color: #3d808e;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.back-to-home a {
+  text-decoration: none;
+  color: #3d808e;
+}
+
+#back-arrow {
+  transition: ease 250ms;
+}
+
+.back-to-home:hover #back-arrow {
+  transform: translateX(-8px);
+  cursor: pointer;
 }
 
 .login-form {

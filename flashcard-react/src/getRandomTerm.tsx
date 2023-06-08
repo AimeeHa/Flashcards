@@ -16,7 +16,9 @@ function getRandomTerm(category: string) {
         {category == 'TECH' ? 'TECH' : category == 'ENG' ? 'TOO TIRED' : ''}
       </div>
       <div className="view-definition">
-        <div>What's this?</div>
+        <div>
+          <a href="/explore">What's this?</a>
+        </div>
         <div className="view-arrow">
           <EastRoundedIcon style={{ width: '0.6em' }} />
         </div>

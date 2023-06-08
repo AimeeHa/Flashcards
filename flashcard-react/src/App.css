@@ -117,10 +117,11 @@
   font-size: 14px;
   justify-content: center;
   gap: 4px;
+  cursor: pointer;
 }
 
-.view-definition {
-  cursor: pointer;
+.view-definition a {
+  text-decoration: none;
   color: #3d808e;
 }
 
