@@ -32,7 +32,7 @@ function Navbar() {
       {/* SMALLER SCREEN MENU LIST */}
       <ul className={showMenu ? 'navbarMenu show' : 'navbarMenu'}>
         <li className="navButton">
-          <a className="white-button" href="/">
+          <a className="white-button" href="/mystudy">
             MY STUDY
           </a>
         </li>
@@ -42,7 +42,7 @@ function Navbar() {
           </a>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/">
+          <a className="white-button" href="/create">
             CREATE
           </a>
         </li>
@@ -61,7 +61,7 @@ function Navbar() {
       {/* NORMAL SCREEEN nav buttons */}
       <ul className={showMenu ? 'navbarLeft hidden' : 'navbarLeft'}>
         <li className="navButton">
-          <a className="white-button" href="/">
+          <a className="white-button" href="/mystudy">
             MY STUDY
           </a>
         </li>
@@ -71,7 +71,7 @@ function Navbar() {
           </a>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/">
+          <a className="white-button" href="/create">
             CREATE
           </a>
         </li>

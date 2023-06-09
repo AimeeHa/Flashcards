@@ -88,3 +88,13 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (width < 800px) {
+  #register-page {
+    grid-template-columns: 0 1fr;
+  }
+
+  .left-content {
+    display: none;
+  }
+}

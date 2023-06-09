@@ -9,7 +9,7 @@ function Register() {
       <div id="register-page">
         <div className="left">
           <BackHomeButton />
-          <div>Some wordssssssss</div>
+          <div className="left-content">Some wordssssssss</div>
         </div>
         <div className="right">
           <form className="register-form">

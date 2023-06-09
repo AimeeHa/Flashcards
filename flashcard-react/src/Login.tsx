@@ -9,7 +9,7 @@ function Login() {
       <div id="login-page">
         <div className="left">
           <BackHomeButton />
-          <div>Some wordssssssss</div>
+          <div className="left-content">Some wordssssssss</div>
         </div>
         <div className="right">
           <form className="login-form">
