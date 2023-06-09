@@ -26,7 +26,9 @@ function Login() {
               type="password"
             />
             <div className="login-button">
-              <button className="blue-button">Log In</button>
+              <button className="blue-button" type="submit">
+                Log In
+              </button>
               <div className="link-to-others">
                 <a href="/resetpassword">Forgot your password?</a>
               </div>

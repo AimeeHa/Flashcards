@@ -38,7 +38,9 @@ function Register() {
               type="password"
             />
             <div className="register-button">
-              <button className="blue-button">Register</button>
+              <button className="blue-button" type="submit">
+                Register
+              </button>
             </div>
           </form>
         </div>
