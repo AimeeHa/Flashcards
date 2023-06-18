@@ -133,3 +133,24 @@
   transform: translateX(8px);
   cursor: pointer;
 }
+
+@media (width < 869px) {
+  .articles {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .article-header {
+    padding-bottom: 24px;
+  }
+
+  .contact-message,
+  .contact-note,
+  .leave-message {
+    padding-left: 24px;
+  }
+
+  .contact-note {
+    margin-top: 0;
+  }
+}
