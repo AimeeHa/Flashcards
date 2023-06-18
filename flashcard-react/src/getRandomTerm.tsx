@@ -1,6 +1,8 @@
 import EastRoundedIcon from '@mui/icons-material/EastRounded';
+import { useNavigate } from 'react-router-dom';
 
 function getRandomTerm(category: string) {
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -15,10 +17,14 @@ function getRandomTerm(category: string) {
         {/* TODO: */}
         {category == 'TECH' ? 'TECH' : category == 'ENG' ? 'TOO TIRED' : ''}
       </div>
-      <div className="view-definition">
-        <div>
-          <a href="/explore">What's this?</a>
-        </div>
+      <div
+        className="view-definition"
+        onClick={() => {
+          // TODO: Change link
+          navigate('/explore');
+        }}
+      >
+        <div>What's this?</div>
         <div className="view-arrow">
           <EastRoundedIcon style={{ width: '0.6em' }} />
         </div>
