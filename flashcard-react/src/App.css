@@ -27,7 +27,7 @@
 }
 
 .banner {
-  animation: slideUp 1.5s ease-out;
+  animation: slideUp 1.2s ease-out;
   color: #444647;
   padding: 12px 48px 0px 48px;
   min-height: calc(100vh * 0.55);
@@ -49,7 +49,7 @@
 }
 
 .articles {
-  animation: slideUp 1.5s ease-out;
+  animation: slideUp 1.2s ease-out;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -61,10 +61,12 @@
 .two,
 .three {
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
 }
+
 .one {
   background-color: #f0f6fa;
 }
@@ -89,10 +91,15 @@
   align-self: center;
 }
 
+.contact-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .contact-message {
   font-size: 14px;
   font-weight: 450;
-  margin-top: 12px;
 }
 
 .contact-note {
@@ -101,9 +108,8 @@
 }
 
 .leave-message {
-  margin-top: 12px;
   align-self: center;
-  flex-grow: 0.5;
+  margin-top: 28px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -150,7 +156,7 @@
     padding-left: 24px;
   }
 
-  .contact-note {
-    margin-top: 0;
+  .leave-message {
+    margin-top: 12px;
   }
 }

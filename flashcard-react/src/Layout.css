@@ -8,7 +8,7 @@
 
 #layout > div {
   padding: 16px 48px;
-  animation: onLoad 1s ease-out;
+  animation: onLoad 800ms ease-out;
 }
 
 @keyframes onLoad {

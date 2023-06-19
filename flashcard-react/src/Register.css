@@ -19,7 +19,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  animation: onLoad 1s ease-out;
+  animation: onLoad 800ms ease-out;
 }
 
 .left,

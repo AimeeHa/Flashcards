@@ -30,16 +30,18 @@ function App() {
 
           <div className="articles three">
             <div className="article-header">CONTACT US</div>
-            <div className="contact-message">
-              If you have encountered any issues while using Aimee's Cards, or
-              have any suggestions for improving the application, don't hesitate
-              to reach out!
-            </div>
-            <div className="contact-note">
-              (Or even if you just want to share a random story &#128521;)
-            </div>
-            <div className="leave-message">
-              <button className="blue-button">Leave Aimee a message</button>
+            <div className="contact-root">
+              <div className="contact-message">
+                If you have encountered any issues while using Aimee's Cards, or
+                have any suggestions for improving the application, don't
+                hesitate to reach out!
+              </div>
+              <div className="contact-note">
+                (Or even if you just want to share a random story &#128521;)
+              </div>
+              <div className="leave-message">
+                <button className="blue-button">Leave Aimee a message</button>
+              </div>
             </div>
           </div>
         </div>
