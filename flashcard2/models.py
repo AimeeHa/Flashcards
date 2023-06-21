@@ -13,7 +13,7 @@ CATEGORIES = [
 class FlashcardSet(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="flashcard_sets")
-    name = models.CharField(max_length=255)
+    set_name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     category = models.CharField(max_length=20, choices=CATEGORIES)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -23,5 +23,21 @@ class Flashcard(models.Model):
     set = models.ForeignKey(FlashcardSet, on_delete=models.CASCADE, related_name="flashcards")
     term = models.CharField(max_length=255)
     definition = models.CharField(max_length=255)
-    created_at = models.DateTimeField(auto_now_add=True).strftime("%b %-d %Y, %-I:%M %p")
-    updated_at = models.DateTimeField(auto_now=True).strftime("%b %-d %Y, %-I:%M %p")
+
+class ViewedSet(models.Model):
+    id = models.AutoField(primary_key=True)
+    user =models.ForeignKey(User, on_delete=models.CASCADE, related_name="viewed_sets")
+    set = models.ForeignKey(FlashcardSet, on_delete=models.CASCADE, related_name="viewed_sets")
+    viewed_at = models.DateTimeField(auto_now_add=True)
+
+class SavedCard(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="saved_cards")
+    flashcard = models.ForeignKey(Flashcard, on_delete=models.CASCADE, related_name="saved_cards")
+    saved_at = models.DateTimeField(auto_now_add=True)
+
+class SavedSet(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="saved_sets")
+    set = models.ForeignKey(FlashcardSet, on_delete=models.CASCADE, related_name="saved_sets")
+    saved_at = models.DateTimeField(auto_now_add=True)
