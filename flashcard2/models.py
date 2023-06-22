@@ -2,8 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    pass
-
+    USERNAME_FIELD = 'email'
+    email = models.EmailField(unique=True)
+# Remove 'email' from the 'REQUIRED_FIELDS' list
+    REQUIRED_FIELDS = []
+    
 CATEGORIES = [
         ("English", "English"),
         ("Technology", "Technology"),

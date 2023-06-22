@@ -2,16 +2,18 @@ from rest_framework import serializers
 from .models import User, FlashcardSet, Flashcard, ViewedSet, SavedCard, SavedSet
 
 class UserSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(source="first_name")
+
     class Meta:
         model = User
-        fields = ("id", "username", "email")
+        fields = ["name", "email", "password"]
 
 class FlashcardSetSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%d/%m/%Y %H:%M:%S')
     
     class Meta:
         model = FlashcardSet
-        fields = ("id", "user", "set_name", "description", "category", "created_at")
+        fields = ["id", "user", "set_name", "description", "category", "created_at"]
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
@@ -51,5 +53,4 @@ class SavedSetSerializer(serializers.ModelSerializer):
         representation = super().to_representation(instance)
         representation['saved_at'] = instance.saved_at.strftime('%d/%m/%Y %H:%M:%S')
         return representation
-    
     

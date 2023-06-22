@@ -8,6 +8,7 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmation, setConfirmation] = useState('');
 
   const handleNameChange = async (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -27,10 +28,34 @@ function Register() {
     setPassword(event.target.value);
   };
 
+  const handleConfirmationChange = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    setConfirmation(event.target.value);
+  };
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = { name, email, password };
-    console.log(formData); //TODO: send to backend
+    if (password !== confirmation) {
+      alert('Passwords do not match!'); //TODO: change to a better way
+    }
+
+    const formData = { name: name, email: email, password: password };
+
+    const response = await fetch('http://localhost:8000/register/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(formData),
+    });
+
+    if (response.status === 201) {
+      console.log('Successfully registered!');
+    } else {
+      alert('This email has already been registered!'); //TODO: change to a better way
+    }
   };
 
   return (
@@ -68,6 +93,7 @@ function Register() {
               label="Confirm Password"
               placeholder="Type your password again"
               type="password"
+              onChange={handleConfirmationChange}
             />
             <div className="register-button">
               <button className="blue-button" type="submit">
