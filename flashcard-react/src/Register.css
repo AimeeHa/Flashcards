@@ -98,3 +98,13 @@
     display: none;
   }
 }
+
+.alert-shown {
+  font-size: 14px;
+  color: red;
+}
+
+.alert-hidden {
+  display: none;
+  visibility: hidden;
+}
