@@ -41,12 +41,20 @@
   flex-direction: column;
 }
 
+.form-root {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
   width: 50%;
   padding: 8px 0px;
+  align-self: center;
 }
 
 .input-row {

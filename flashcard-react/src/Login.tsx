@@ -34,30 +34,35 @@ function Login() {
           <div className="left-content">Some wordssssssss</div>
         </div>
         <div className="right">
-          <form className="login-form" onSubmit={handleSubmit}>
-            <InputRow
-              id="email"
-              label="Email"
-              placeholder="Type your email"
-              type="email"
-              onChange={handleEmailChange}
-            />
-            <InputRow
-              id="password"
-              label="Password"
-              placeholder="Type your password"
-              type="password"
-              onChange={handlePasswordChange}
-            />
-            <div className="login-button">
-              <button className="blue-button" type="submit">
-                Log In
-              </button>
-              <div className="link-to-others">
-                <a href="/resetpassword">Forgot your password?</a>
+          <div className="form-root">
+            <form className="login-form" onSubmit={handleSubmit}>
+              <InputRow
+                id="email"
+                label="Email"
+                placeholder="Type your email"
+                type="email"
+                onChange={handleEmailChange}
+              />
+              <InputRow
+                id="password"
+                label="Password"
+                placeholder="Type your password"
+                type="password"
+                onChange={handlePasswordChange}
+              />
+              <div className="login-button">
+                <button className="blue-button" type="submit">
+                  Log In
+                </button>
               </div>
+            </form>
+            <div
+              className="link-to-others"
+              style={{ position: 'absolute', bottom: '12px', right: '22%' }}
+            >
+              <a href="/resetpassword">Forgot your password?</a>
             </div>
-          </form>
+          </div>
           <div
             className="link-to-others"
             style={{ width: '50%', textAlign: 'center' }}

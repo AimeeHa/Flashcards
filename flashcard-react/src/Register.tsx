@@ -101,6 +101,11 @@ function Register() {
               </button>
             </div>
           </form>
+          <div>Passwords do not match. Please re-enter your passwords.</div>
+          <div>
+            This email has already been registered. Please use another email or
+            back to <a href="/login">login</a>.
+          </div>
         </div>
       </div>
     </>
