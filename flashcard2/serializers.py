@@ -3,10 +3,17 @@ from .models import User, FlashcardSet, Flashcard, ViewedSet, SavedCard, SavedSe
 
 class UserSerializer(serializers.ModelSerializer):
     name = serializers.CharField(source="first_name")
-
+    
     class Meta:
         model = User
         fields = ["name", "email", "password"]
+
+    def create(self, validated_data):
+            password = validated_data.pop('password')
+            user = self.Meta.model(**validated_data)
+            user.set_password(password)  # Hash the password
+            user.save()
+            return user
 
 class FlashcardSetSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%d/%m/%Y %H:%M:%S')
