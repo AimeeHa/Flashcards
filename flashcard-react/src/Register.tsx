@@ -73,7 +73,7 @@ function Register() {
     if (isEmailError) {
       timeoutId = setTimeout(() => {
         setIsEmailError(false);
-      }, 2000);
+      }, 3000);
 
       return () => {
         clearTimeout(timeoutId);
@@ -153,23 +153,24 @@ function Register() {
               </button>
             </div>
           </form>
-          <div className={isPwError ? 'alert-shown' : 'alert-hidden'}>
-            Passwords do not match. Please re-enter your passwords.
-          </div>
-          <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
-            This email has already been registered.
-            <br />
-            Please use another email or back to &nbsp;
-            <a
-              href="/login"
-              style={{
-                color: '#3D808E',
-                fontWeight: '500',
-              }}
-            >
-              login
-            </a>
-            .
+          <div className="alert-root">
+            <div className={isPwError ? 'alert-shown' : 'alert-hidden'}>
+              Passwords do not match. Please try again.
+            </div>
+            <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
+              This email has already been registered. <br /> Please use another
+              email or back to &nbsp;
+              <a
+                href="/login"
+                style={{
+                  color: '#3D808E',
+                  fontWeight: '500',
+                }}
+              >
+                login
+              </a>
+              .
+            </div>
           </div>
         </div>
       </div>

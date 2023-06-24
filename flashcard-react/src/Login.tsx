@@ -82,14 +82,16 @@ function Login() {
               <a href="/resetpassword">Forgot your password?</a>
             </div>
           </div>
-          <div className={isError ? 'alert-shown' : 'alert-hidden'}>
-            Incorrect email or password. Please try again.
-          </div>
           <div
             className="link-to-others"
             style={{ width: '50%', textAlign: 'center' }}
           >
             <a href="/register">New here? Register an account.</a>
+          </div>
+          <div className={'alert-root'}>
+            <div className={isError ? 'alert-shown' : 'alert-hidden'}>
+              Incorrect email or password. Please try again.
+            </div>
           </div>
         </div>
       </div>

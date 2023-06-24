@@ -99,12 +99,28 @@
   }
 }
 
+.alert-root {
+  width: 50%;
+  height: 10%;
+  position: relative;
+}
+
 .alert-shown {
-  font-size: 14px;
+  position: absolute;
+  top: 0;
   color: red;
+  font-size: 14px;
+  width: 100%;
 }
 
 .alert-hidden {
-  display: none;
+  position: absolute;
+  top: 0;
+  font-size: 14px;
   visibility: hidden;
+  width: 100%;
+}
+
+.alert-hidden a {
+  display: none;
 }

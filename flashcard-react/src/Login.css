@@ -107,14 +107,20 @@
   }
 }
 
-.alert-shown {
-  font-size: 14px;
-  color: red;
+.alert-root {
   width: 50%;
-  text-overflow: wrap;
+  height: 10%;
+  position: relative;
+}
+
+.alert-shown {
+  color: red;
+  width: 100%;
+  font-size: 14px;
 }
 
 .alert-hidden {
-  display: none;
+  font-size: 14px;
   visibility: hidden;
+  width: 100%;
 }
