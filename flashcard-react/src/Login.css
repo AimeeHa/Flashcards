@@ -108,9 +108,10 @@
 }
 
 .alert-root {
-  width: 50%;
+  width: 55%;
   height: 10%;
   position: relative;
+  padding-left: 28px;
 }
 
 .alert-shown {

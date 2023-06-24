@@ -158,8 +158,8 @@ function Register() {
               Passwords do not match. Please try again.
             </div>
             <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
-              This email has already been registered. <br /> Please use another
-              email or back to &nbsp;
+              This email has already been registered. Please use another email
+              or back to &nbsp;
               <a
                 href="/login"
                 style={{
