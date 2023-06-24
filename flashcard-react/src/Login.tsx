@@ -2,11 +2,13 @@ import './Login.css';
 import './Button.css';
 import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const [isError, setIsError] = useState(false);
 
   const handleEmailChange = async (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -20,10 +22,27 @@ function Login() {
     setPassword(event.target.value);
   };
 
+  useEffect(() => {
+    let timeoutId: number | undefined;
+
+    if (isError) {
+      timeoutId = setTimeout(() => {
+        setIsError(false);
+      }, 2000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+    [isError];
+  });
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = { email, password };
     console.log(formData); //TODO: check and login
+    // IF NOT SUCCESSFUL, SET ERROR ALERT
+    setIsError(true);
   };
 
   return (
@@ -62,6 +81,9 @@ function Login() {
             >
               <a href="/resetpassword">Forgot your password?</a>
             </div>
+          </div>
+          <div className={isError ? 'alert-shown' : 'alert-hidden'}>
+            Incorrect email or password. Please try again.
           </div>
           <div
             className="link-to-others"

@@ -51,6 +51,7 @@ function Register() {
   //   setConfirmation(event.target.value);
   // };
 
+  // USEEFFECT TO CLEAR ERROR ALERTS AFTER 2 SECONDS
   useEffect(() => {
     let timeoutId: number | undefined;
 
@@ -81,30 +82,31 @@ function Register() {
     [isEmailError];
   });
 
+  // HANDLE FORM SUBMISSION
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (password !== confirmation) {
       setIsPwError(true);
-    }
-
-    const formData = { name: name, email: email, password: password };
-
-    const response = await fetch('http://localhost:8000/register/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify(formData),
-    });
-
-    if (response.status === 201) {
-      console.log('Successfully registered!');
-      navigate('/login');
-    } else if (response.status === 400) {
-      setIsEmailError(true);
     } else {
-      alert(response.status + ' ' + response.statusText); //TO CHANGE
+      const formData = { name: name, email: email, password: password };
+
+      const response = await fetch('http://localhost:8000/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(formData),
+      });
+
+      if (response.status === 201) {
+        console.log('Successfully registered!');
+        navigate('/login');
+      } else if (response.status === 400) {
+        setIsEmailError(true);
+      } else {
+        alert(response.status + ' ' + response.statusText);
+      }
     }
   };
 

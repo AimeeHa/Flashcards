@@ -106,3 +106,15 @@
     display: none;
   }
 }
+
+.alert-shown {
+  font-size: 14px;
+  color: red;
+  width: 50%;
+  text-overflow: wrap;
+}
+
+.alert-hidden {
+  display: none;
+  visibility: hidden;
+}
