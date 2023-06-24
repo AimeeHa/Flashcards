@@ -1,0 +1,35 @@
+.left-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.left-side-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 50vh;
+}
+
+.left-side-photos {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.left-side-photos img {
+  border-radius: 10px;
+  border: 2px solid #3d808e;
+  box-shadow: 0px 0px 10px 0px #3d808e;
+}
+
+.left-side-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  font-size: 36px;
+}

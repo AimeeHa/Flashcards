@@ -3,6 +3,7 @@ import './Button.css';
 import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
+import LoginLeftContent from './LoginLeftContent';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -50,7 +51,7 @@ function Login() {
       <div id="login-page">
         <div className="left">
           <BackHomeButton />
-          <div className="left-content">Some wordssssssss</div>
+          <LoginLeftContent />
         </div>
         <div className="right">
           <div className="form-root">
