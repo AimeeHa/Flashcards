@@ -4,8 +4,10 @@ import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
 import LoginLeftContent from './LoginLeftContent';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -41,9 +43,23 @@ function Login() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = { email, password };
-    console.log(formData); //TODO: check and login
-    // IF NOT SUCCESSFUL, SET ERROR ALERT
-    setIsError(true);
+
+    const response = await fetch('http://localhost:8000/login/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(formData),
+    });
+    console.log(response);
+
+    if (response.status === 200) {
+      console.log('Successfully logged in!');
+      navigate('/');
+    } else {
+      setIsError(true);
+    }
   };
 
   return (

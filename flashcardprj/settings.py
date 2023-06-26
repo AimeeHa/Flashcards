@@ -57,6 +57,12 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173', # new
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    # Add additional authentication backends if needed
+]
+
+
 ROOT_URLCONF = 'flashcardprj.urls'
 
 TEMPLATES = [
