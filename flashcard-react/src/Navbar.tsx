@@ -2,10 +2,49 @@ import './Navbar.css';
 import { useState } from 'react';
 import { LuMenu } from 'react-icons/lu';
 
-// TODO: Fix all nav links
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const checkAuthenticated = async () => {
+    await fetch('http://localhost:8000/check_authentication/', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setIsAuthenticated(data.is_authenticated);
+      });
+  };
+
+  const loginRegister = isAuthenticated ? (
+    <>
+      <li className="greeting-logged-in">Hi User</li>
+      <li className="navButton">
+        <a className="white-button" onClick={checkAuthenticated}>
+          LOG OUT
+        </a>
+      </li>
+    </>
+  ) : (
+    <>
+      <li className="navButton">
+        <a className="white-button" href="/login">
+          LOG IN
+        </a>
+      </li>
+      <li className="navButton">
+        <a id="register" href="/register">
+          REGISTER
+        </a>
+      </li>
+    </>
+  );
 
   return (
     <nav className="navbarRoot">
@@ -46,6 +85,8 @@ function Navbar() {
             CREATE
           </a>
         </li>
+        {loginRegister}
+        {/* TODO: If not logged in
         <li className="navButton">
           <a className="white-button" href="/login">
             LOG IN
@@ -56,6 +97,12 @@ function Navbar() {
             REGISTER
           </a>
         </li>
+        TODO: If logged in
+        <li className="navButton">
+          <a className="white-button" onClick={checkAuthenticated}>
+            LOG OUT
+          </a>
+        </li> */}
       </ul>
 
       {/* NORMAL SCREEEN nav buttons */}
@@ -86,6 +133,8 @@ function Navbar() {
       </form>
 
       <ul className={showMenu ? 'navbarRight small' : 'navbarRight'}>
+        {loginRegister}
+        {/* TODO: If not logged in
         <li className="navButton">
           <a className="white-button" href="/login">
             LOG IN
@@ -96,6 +145,13 @@ function Navbar() {
             REGISTER
           </a>
         </li>
+        TODO: If logged in
+        <li className="greeting-logged-in">Hi User</li>
+        <li className="navButton">
+          <a className="white-button" onClick={checkAuthenticated}>
+            LOG OUT
+          </a>
+        </li> */}
       </ul>
     </nav>
   );

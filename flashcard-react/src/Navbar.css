@@ -102,6 +102,15 @@
   display: none;
 }
 
+.greeting-logged-in {
+  list-style-type: none;
+  font-size: 14px;
+  font-weight: 550;
+  color: #3d808e;
+  margin: 0;
+  padding: 0;
+}
+
 @media (width < 1000px) {
   #aimee a {
     display: block;

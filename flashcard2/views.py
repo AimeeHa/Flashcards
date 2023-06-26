@@ -25,3 +25,10 @@ def login_view(request):
     else:
         # Invalid credentials
         return JsonResponse({"error": "Invalid credentials."}, status=400)
+
+
+def check_authentication(request):
+    if request.user.is_authenticated:
+        return JsonResponse({'is_authenticated': True})
+    else:
+        return JsonResponse({'is_authenticated': False})
