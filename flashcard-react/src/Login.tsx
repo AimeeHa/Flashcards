@@ -51,7 +51,7 @@ function Login() {
       <div id="login-page">
         <div className="left">
           <BackHomeButton />
-          <LoginLeftContent />
+          {LoginLeftContent('Log in and start having fun.')}
         </div>
         <div className="right">
           <div className="form-root">

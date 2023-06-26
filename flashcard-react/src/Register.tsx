@@ -4,6 +4,7 @@ import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginLeftContent from './LoginLeftContent';
 
 function Register() {
   const navigate = useNavigate();
@@ -115,7 +116,7 @@ function Register() {
       <div id="register-page">
         <div className="left">
           <BackHomeButton />
-          <div className="left-content">Some wordssssssss</div>
+          {LoginLeftContent('Register and start your study journey here.')}
         </div>
         <div className="right">
           <form className="register-form" onSubmit={handleSubmit}>
