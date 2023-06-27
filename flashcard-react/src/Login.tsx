@@ -49,16 +49,16 @@ function Login() {
       headers: {
         'Content-Type': 'application/json',
       },
-      credentials: 'include',
       body: JSON.stringify(formData),
     });
-    console.log(response);
 
     if (response.status === 200) {
       console.log('Successfully logged in!');
       navigate('/');
-    } else {
+    } else if (response.status === 400) {
       setIsError(true);
+    } else {
+      alert(response.status + ' ' + response.statusText);
     }
   };
 

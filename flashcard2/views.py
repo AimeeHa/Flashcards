@@ -5,6 +5,12 @@ from rest_framework.decorators import api_view
 from .models import User, FlashcardSet, Flashcard, ViewedSet, SavedCard, SavedSet
 from .serializers import UserSerializer, FlashcardSetSerializer, FlashcardSerializer, ViewedSetSerializer, SavedCardSerializer, SavedSetSerializer
 
+@api_view(["GET"])
+def get_user_info(request):
+    serializer = UserSerializer(request.user)
+    print('CHECK',serializer.data)
+    return JsonResponse(serializer.data)
+
 @api_view(["POST"])
 def register(request):
     serializer = UserSerializer(data=request.data)
@@ -26,9 +32,3 @@ def login_view(request):
         # Invalid credentials
         return JsonResponse({"error": "Invalid credentials."}, status=400)
 
-
-def check_authentication(request):
-    if request.user.is_authenticated:
-        return JsonResponse({'is_authenticated': True})
-    else:
-        return JsonResponse({'is_authenticated': False})
