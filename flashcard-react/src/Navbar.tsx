@@ -1,29 +1,47 @@
 import './Navbar.css';
 import { useEffect, useState } from 'react';
 import { LuMenu } from 'react-icons/lu';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
-
-  const userId = localStorage.getItem('userID');
+  const [userName, setUserName] = useState('');
 
   const checkLogin = async () => {
-    const response = await fetch('http://localhost:8000/getuserinfo/');
-    console.log(response);
+    const response = await fetch('http://localhost:8000/getuserinfo/', {
+      method: 'GET',
+      credentials: 'include',
+    });
+    setUserName((await response.json()).name);
   };
 
   useEffect(() => {
     checkLogin();
   }, []);
 
+  const handleLogout = async () => {
+    const response = await fetch('http://localhost:8000/logout/', {
+      method: 'POST',
+      credentials: 'include',
+    });
+    if (response.status === 200) {
+      console.log('Successfully logged out!');
+      setUserName('');
+      navigate('/');
+    }
+  };
+
   // TODO: Check if user is authenticated
   const loginRegister =
-    userId != null ? (
+    userName != null ? (
       <>
-        <li className="greeting-logged-in">Hi User</li>
+        <li className="greeting-logged-in">Hi {userName}</li>
         <li className="navButton">
-          <a className="white-button">LOG OUT</a>
+          <a className="white-button" onClick={handleLogout}>
+            LOG OUT
+          </a>
         </li>
       </>
     ) : (
@@ -80,23 +98,8 @@ function Navbar() {
             CREATE
           </a>
         </li>
+
         {loginRegister}
-        {/* 
-        <li className="navButton">
-          <a className="white-button" href="/login">
-            LOG IN
-          </a>
-        </li>
-        <li className="navButton">
-          <a id="register" href="/register">
-            REGISTER
-          </a>
-        </li>
-        <li className="navButton">
-          <a className="white-button" onClick={checkAuthenticated}>
-            LOG OUT
-          </a>
-        </li> */}
       </ul>
 
       {/* NORMAL SCREEEN nav buttons */}
@@ -128,24 +131,6 @@ function Navbar() {
 
       <ul className={showMenu ? 'navbarRight small' : 'navbarRight'}>
         {loginRegister}
-        {/* 
-        <li className="navButton">
-          <a className="white-button" href="/login">
-            LOG IN
-          </a>
-        </li>
-        <li className="navButton">
-          <a id="register" href="/register">
-            REGISTER
-          </a>
-        </li>
-        
-        <li className="greeting-logged-in">Hi User</li>
-        <li className="navButton">
-          <a className="white-button" onClick={checkAuthenticated}>
-            LOG OUT
-          </a>
-        </li> */}
       </ul>
     </nav>
   );
