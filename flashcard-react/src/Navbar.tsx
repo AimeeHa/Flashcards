@@ -14,7 +14,11 @@ function Navbar() {
       method: 'GET',
       credentials: 'include',
     });
-    setUserName((await response.json()).name);
+    if (response.status === 200) {
+      setUserName((await response.json()).name);
+    } else {
+      setUserName('');
+    }
   };
 
   useEffect(() => {
@@ -24,18 +28,23 @@ function Navbar() {
   const handleLogout = async () => {
     const response = await fetch('http://localhost:8000/logout/', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       credentials: 'include',
     });
+    console.log(response);
     if (response.status === 200) {
       console.log('Successfully logged out!');
       setUserName('');
       navigate('/');
+      navigate(0);
     }
   };
 
   // TODO: Check if user is authenticated
   const loginRegister =
-    userName != null ? (
+    userName != '' ? (
       <>
         <li className="greeting-logged-in">Hi {userName}</li>
         <li className="navButton">
