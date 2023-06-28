@@ -1,29 +1,14 @@
 import './Navbar.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LuMenu } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
+import getUserInfo from './getUserInfo';
 
 function Navbar() {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
-  const [userName, setUserName] = useState('');
-
-  const checkLogin = async () => {
-    const response = await fetch('http://localhost:8000/getuserinfo/', {
-      method: 'GET',
-      credentials: 'include',
-    });
-    if (response.status === 200) {
-      setUserName((await response.json()).name);
-    } else {
-      setUserName('');
-    }
-  };
-
-  useEffect(() => {
-    checkLogin();
-  }, []);
+  const userName = getUserInfo();
 
   const handleLogout = async () => {
     const response = await fetch('http://localhost:8000/logout/', {
@@ -36,9 +21,7 @@ function Navbar() {
     console.log(response);
     if (response.status === 200) {
       console.log('Successfully logged out!');
-      setUserName('');
       navigate('/');
-      navigate(0);
     }
   };
 

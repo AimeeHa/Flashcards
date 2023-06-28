@@ -5,9 +5,11 @@ import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginLeftContent from './LoginLeftContent';
+import getUserInfo from './getUserInfo';
 
 function Register() {
   const navigate = useNavigate();
+  const userName = getUserInfo();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -110,6 +112,72 @@ function Register() {
     }
   };
 
+  const rightContent =
+    userName === '' ? (
+      <>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <InputRow
+            id="name"
+            label="Name"
+            placeholder="Type your first name"
+            type="text"
+            onChange={handleNameChange}
+          />
+          <InputRow
+            id="email"
+            label="Email"
+            placeholder="Type your email"
+            type="email"
+            onChange={handleEmailChange}
+          />
+          <InputRow
+            id="password"
+            label="Password"
+            placeholder="Type your password"
+            type="password"
+            onChange={handlePasswordChange}
+          />
+          <InputRow
+            id="confirmation"
+            label="Confirm Password"
+            placeholder="Type your password again"
+            type="password"
+            onChange={handleConfirmationChange}
+          />
+          <div className="register-button">
+            <button className="blue-button" type="submit">
+              Register
+            </button>
+          </div>
+        </form>
+        <div className="alert-root">
+          <div className={isPwError ? 'alert-shown' : 'alert-hidden'}>
+            Passwords do not match. Please try again.
+          </div>
+          <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
+            This email has already been registered. Please use another email or
+            back to &nbsp;
+            <a
+              href="/login"
+              style={{
+                color: '#3D808E',
+                fontWeight: '500',
+              }}
+            >
+              login
+            </a>
+            .
+          </div>
+        </div>
+      </>
+    ) : (
+      <>
+        <div className="already-logged-in-message">
+          You are currently logged in. Please log out first.
+        </div>
+      </>
+    );
+
   return (
     <>
       <div id="register-page">
@@ -117,62 +185,7 @@ function Register() {
           <BackHomeButton />
           {LoginLeftContent('Register and start your study journey here.')}
         </div>
-        <div className="right">
-          <form className="register-form" onSubmit={handleSubmit}>
-            <InputRow
-              id="name"
-              label="Name"
-              placeholder="Type your first name"
-              type="text"
-              onChange={handleNameChange}
-            />
-            <InputRow
-              id="email"
-              label="Email"
-              placeholder="Type your email"
-              type="email"
-              onChange={handleEmailChange}
-            />
-            <InputRow
-              id="password"
-              label="Password"
-              placeholder="Type your password"
-              type="password"
-              onChange={handlePasswordChange}
-            />
-            <InputRow
-              id="confirmation"
-              label="Confirm Password"
-              placeholder="Type your password again"
-              type="password"
-              onChange={handleConfirmationChange}
-            />
-            <div className="register-button">
-              <button className="blue-button" type="submit">
-                Register
-              </button>
-            </div>
-          </form>
-          <div className="alert-root">
-            <div className={isPwError ? 'alert-shown' : 'alert-hidden'}>
-              Passwords do not match. Please try again.
-            </div>
-            <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
-              This email has already been registered. Please use another email
-              or back to &nbsp;
-              <a
-                href="/login"
-                style={{
-                  color: '#3D808E',
-                  fontWeight: '500',
-                }}
-              >
-                login
-              </a>
-              .
-            </div>
-          </div>
-        </div>
+        <div className="right">{rightContent}</div>
       </div>
     </>
   );
