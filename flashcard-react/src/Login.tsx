@@ -59,6 +59,7 @@ function Login() {
     if (response.status === 200) {
       console.log('Successfully logged in!');
       navigate('/');
+      navigate(0); // refresh page
     } else if (response.status === 400) {
       setIsError(true);
     } else {

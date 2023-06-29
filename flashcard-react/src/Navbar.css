@@ -103,6 +103,10 @@
 }
 
 .greeting-logged-in {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
   list-style-type: none;
   font-size: 14px;
   font-weight: 550;
@@ -181,6 +185,10 @@
 
   .navMenuButton.clicked {
     background-color: #3d808e;
+  }
+
+  .greeting-logged-in {
+    display: none;
   }
 }
 

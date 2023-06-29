@@ -2,7 +2,9 @@ import './Navbar.css';
 import { useContext, useState } from 'react';
 import { LuMenu } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { UserContext } from './UserProvider';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -30,7 +32,9 @@ function Navbar() {
   const loginRegister =
     user != null ? (
       <>
-        <li className="greeting-logged-in">Hi {user}</li>
+        <li className="greeting-logged-in">
+          <AccountCircleRoundedIcon style={{ color: '#3d808e' }} /> {user}
+        </li>
         <li className="navButton">
           <a className="white-button" onClick={handleLogout}>
             LOG OUT
@@ -40,14 +44,14 @@ function Navbar() {
     ) : (
       <>
         <li className="navButton">
-          <a className="white-button" href="/login">
+          <Link className="white-button" to="/login">
             LOG IN
-          </a>
+          </Link>
         </li>
         <li className="navButton">
-          <a id="register" href="/register">
+          <Link id="register" to="/register">
             REGISTER
-          </a>
+          </Link>
         </li>
       </>
     );
@@ -71,25 +75,25 @@ function Navbar() {
       </button>
 
       <div id="aimee">
-        <a href="/">Aimee's Cards</a>
+        <Link to="/">Aimee's Cards</Link>
       </div>
 
       {/* SMALLER SCREEN MENU LIST */}
       <ul className={showMenu ? 'navbarMenu show' : 'navbarMenu'}>
         <li className="navButton">
-          <a className="white-button" href="/mystudy">
+          <Link className="white-button" to="/mystudy">
             MY STUDY
-          </a>
+          </Link>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/explore">
+          <Link className="white-button" to="/explore">
             EXPLORE
-          </a>
+          </Link>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/create">
+          <Link className="white-button" to="/create">
             CREATE
-          </a>
+          </Link>
         </li>
 
         {loginRegister}
@@ -98,19 +102,19 @@ function Navbar() {
       {/* NORMAL SCREEEN nav buttons */}
       <ul className={showMenu ? 'navbarLeft hidden' : 'navbarLeft'}>
         <li className="navButton">
-          <a className="white-button" href="/mystudy">
+          <Link className="white-button" to="/mystudy">
             MY STUDY
-          </a>
+          </Link>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/explore">
+          <Link className="white-button" to="/explore">
             EXPLORE
-          </a>
+          </Link>
         </li>
         <li className="navButton">
-          <a className="white-button" href="/create">
+          <Link className="white-button" to="/create">
             CREATE
-          </a>
+          </Link>
         </li>
       </ul>
 
