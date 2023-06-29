@@ -5,11 +5,11 @@ import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LoginLeftContent from './LoginLeftContent';
-import getUserInfo from './getUserInfo';
+import useUserInfo from './useUserInfo';
 
 function Register() {
   const navigate = useNavigate();
-  const userName = getUserInfo();
+  const userName = useUserInfo();
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -113,7 +113,7 @@ function Register() {
   };
 
   const rightContent =
-    userName === '' ? (
+    userName == null ? (
       <>
         <form className="register-form" onSubmit={handleSubmit}>
           <InputRow

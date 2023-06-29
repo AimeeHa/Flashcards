@@ -5,11 +5,11 @@ import BackHomeButton from './BackHomeButton';
 import { useEffect, useState } from 'react';
 import LoginLeftContent from './LoginLeftContent';
 import { useNavigate } from 'react-router-dom';
-import getUserInfo from './getUserInfo';
+import useUserInfo from './useUserInfo';
 
 function Login() {
   const navigate = useNavigate();
-  const userName = getUserInfo();
+  const userName = useUserInfo();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,7 +67,7 @@ function Login() {
   };
 
   const rightContent =
-    userName === '' ? (
+    userName == null ? (
       <>
         <div className="form-root">
           <form className="login-form" onSubmit={handleSubmit}>

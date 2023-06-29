@@ -2,13 +2,13 @@ import './Navbar.css';
 import { useState } from 'react';
 import { LuMenu } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
-import getUserInfo from './getUserInfo';
+import useUserInfo from './useUserInfo';
 
 function Navbar() {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
-  const userName = getUserInfo();
+  const userName = useUserInfo();
 
   const handleLogout = async () => {
     const response = await fetch('http://localhost:8000/logout/', {
@@ -22,12 +22,13 @@ function Navbar() {
     if (response.status === 200) {
       console.log('Successfully logged out!');
       navigate('/');
+      navigate(0); // refresh page
     }
   };
 
-  // TODO: Check if user is authenticated
+  // Check if user is authenticated
   const loginRegister =
-    userName != '' ? (
+    userName != null ? (
       <>
         <li className="greeting-logged-in">Hi {userName}</li>
         <li className="navButton">
