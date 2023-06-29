@@ -2,14 +2,14 @@ import './Login.css';
 import './Button.css';
 import InputRow from './InputRow';
 import BackHomeButton from './BackHomeButton';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import LoginLeftContent from './LoginLeftContent';
 import { useNavigate } from 'react-router-dom';
-import useUserInfo from './useUserInfo';
+import { UserContext } from './UserProvider';
 
 function Login() {
   const navigate = useNavigate();
-  const userName = useUserInfo();
+  const user = useContext(UserContext);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -67,7 +67,7 @@ function Login() {
   };
 
   const rightContent =
-    userName == null ? (
+    user == null ? (
       <>
         <div className="form-root">
           <form className="login-form" onSubmit={handleSubmit}>
