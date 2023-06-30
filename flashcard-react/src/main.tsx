@@ -7,6 +7,8 @@ import Explore from './Explore.tsx';
 import Login from './Login.tsx';
 import Register from './Register.tsx';
 import { UserProvider } from './UserProvider.tsx';
+import MyStudy from './MyStudy.tsx';
+import CreateFC from './CreateFC.tsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <Register />,
+  },
+  {
+    path: '/mystudy',
+    element: <MyStudy />,
+  },
+  {
+    path: '/create',
+    element: <CreateFC />,
   },
 ]);
 
