@@ -9,7 +9,9 @@ export default function MyStudy() {
   if (user == null) {
     return (
       <Layout>
-        <div>Please log in to view your created flashcard sets.</div>
+        <div className="null-user-message">
+          Please log in to view your created flashcard sets.
+        </div>
       </Layout>
     );
   } else {

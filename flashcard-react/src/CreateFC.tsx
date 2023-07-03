@@ -11,7 +11,9 @@ export default function CreateFC() {
   if (user == null) {
     return (
       <Layout>
-        <div>Please log in to create your own flashcards.</div>
+        <div className="null-user-message">
+          Please log in to create your own flashcards.
+        </div>
       </Layout>
     );
   } else {
