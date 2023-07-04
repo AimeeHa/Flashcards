@@ -7,7 +7,6 @@ export default function CreateFC() {
   const user = useContext(UserContext);
   const [chooseManual, setChooseManual] = useState('chosen');
   const [chooseCsv, setChooseCsv] = useState('unchosen');
-  const [show, setShow] = useState(false);
 
   if (user == null) {
     return (
