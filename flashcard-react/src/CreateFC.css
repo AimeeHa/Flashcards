@@ -1,47 +1,3 @@
-.create-page {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr;
-  height: 90%;
-}
-
-.create-options {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-weight: 600;
-}
-
-.create-manually,
-.create-csv {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  flex-grow: 1;
-  text-align: center;
-  height: 36px;
-  border-radius: 6px 6px 0px 0px;
-  cursor: pointer;
-}
-
-.unchosen {
-  background-color: #c9dadf;
-  color: #bcbfbf;
-}
-
-.chosen {
-  background-color: #3d808e;
-  color: #ffffff;
-}
-
-.create-form-overall {
-  border: 1px solid #3d808e;
-  border-radius: 0px 0px 6px 6px;
-  font-weight: 600;
-  /* color: #727576; */
-  padding: 12px 36px 0px;
-}
-
 .create-form {
   display: flex;
   flex-direction: column;
@@ -101,14 +57,6 @@
 
 .individual {
   width: calc(100% - 26px);
-}
-
-.hidden {
-  display: none;
-}
-
-.show {
-  display: flex;
 }
 
 .create-buttons-row {
