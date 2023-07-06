@@ -59,7 +59,7 @@
 .input-row label {
   font-size: 13px;
   font-weight: 550;
-  color: #727576;
+  /* color: #727576; */
 }
 
 .input-row input {

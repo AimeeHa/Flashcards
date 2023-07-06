@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 13px;
   font-weight: 600;
 }
 
@@ -38,9 +37,8 @@
 .create-form-overall {
   border: 1px solid #3d808e;
   border-radius: 0px 0px 6px 6px;
-  font-size: 13px;
-  font-weight: 550;
-  color: #727576;
+  font-weight: 600;
+  /* color: #727576; */
   padding: 12px 36px 0px;
 }
 
@@ -62,7 +60,6 @@
   padding: 6px 12px;
   border-radius: 6px;
   font-family: inherit;
-  font-size: 14px;
   border: #eceff4 1px solid;
   background-color: #f6f7fb;
   opacity: 70%;
@@ -92,6 +89,10 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
+}
+
+.individual-flashcard-label {
+  font-weight: 500;
 }
 
 .individual-flashcard-input {
@@ -137,7 +138,6 @@
   padding: 6px 10px;
   border-radius: 6px;
   font-family: inherit;
-  font-size: 14px;
   border: #eceff4 1px solid;
   opacity: 70%;
 }
