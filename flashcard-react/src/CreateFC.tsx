@@ -40,7 +40,16 @@ function CsvCreate() {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
 
-  return <form className="create-form">TODO</form>;
+  console.log('CSV', title, description, category);
+  return (
+    <form className="create-form">
+      <FlashcardSetGeneralInfo
+        onTitleChange={setTitle}
+        onDescriptionChange={setDescription}
+        onCategoryChange={setCategory}
+      />
+    </form>
+  );
 }
 
 /* MANUAL FORM ONLY SHOW WHEN CHOOSE MANUAL IS SELECTED*/
@@ -56,47 +65,11 @@ function ManualCreate() {
   return (
     <>
       <form className="create-form">
-        <FlashcardSetInput
-          rootClassName="flashcard-set-info"
-          id="title"
-          className="set-info-input"
-          label="FLASHCARD SET TITLE"
-          placeholder="My set 1"
-          rows={1}
-          onChange={(e) => {
-            setTitle(e.target.value);
-          }}
+        <FlashcardSetGeneralInfo
+          onTitleChange={setTitle}
+          onDescriptionChange={setDescription}
+          onCategoryChange={setCategory}
         />
-        <FlashcardSetInput
-          rootClassName="flashcard-set-info"
-          id="description"
-          className="set-info-input"
-          label="FLASHCARD SET DESCRIPTION"
-          placeholder="My set 1's description"
-          rows={2}
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
-        />
-        <div className="set-category">
-          <div>CATEGORY</div>
-          <div className="set-category-options">
-            <select
-              required
-              value={category}
-              onChange={(e) => {
-                setCategory(e.target.value);
-              }}
-            >
-              <option value="" disabled selected hidden>
-                Choose a category
-              </option>
-              <option value="english">English</option>
-              <option value="technology">Technology</option>
-              <option value="others">Others</option>
-            </select>
-          </div>
-        </div>
 
         <div className="set-flashcards">INPUT YOUR FLASHCARDS</div>
         {flashcards.map((flashcard, i) => (
@@ -196,5 +169,69 @@ export function FlashcardSetInput({
         onChange={onChange}
       ></textarea>
     </div>
+  );
+}
+
+type FlashcardSetGeneralInfoProps = {
+  onTitleChange: React.Dispatch<React.SetStateAction<string>>;
+  onDescriptionChange: React.Dispatch<React.SetStateAction<string>>;
+  onCategoryChange: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export function FlashcardSetGeneralInfo({
+  onTitleChange,
+  onDescriptionChange,
+  onCategoryChange,
+}: FlashcardSetGeneralInfoProps) {
+  // const [title, setTitle] = useState('');
+  // const [description, setDescription] = useState('');
+  // const [category, setCategory] = useState('');
+
+  return (
+    <>
+      <FlashcardSetInput
+        rootClassName="flashcard-set-info"
+        id="title"
+        className="set-info-input"
+        label="FLASHCARD SET TITLE"
+        placeholder="My set 1"
+        rows={1}
+        // value={title}
+        onChange={(e) => {
+          onTitleChange?.(e.target.value);
+        }}
+      />
+      <FlashcardSetInput
+        rootClassName="flashcard-set-info"
+        id="description"
+        className="set-info-input"
+        label="FLASHCARD SET DESCRIPTION"
+        placeholder="My set 1's description"
+        rows={2}
+        // value={description}
+        onChange={(e) => {
+          onDescriptionChange?.(e.target.value);
+        }}
+      />
+      <div className="set-category">
+        <div>CATEGORY</div>
+        <div className="set-category-options">
+          <select
+            required
+            // value={category}
+            onChange={(e) => {
+              onCategoryChange?.(e.target.value);
+            }}
+          >
+            <option value="" disabled selected hidden>
+              Choose a category
+            </option>
+            <option value="english">English</option>
+            <option value="technology">Technology</option>
+            <option value="others">Others</option>
+          </select>
+        </div>
+      </div>
+    </>
   );
 }
