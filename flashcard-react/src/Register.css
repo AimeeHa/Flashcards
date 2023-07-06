@@ -39,6 +39,7 @@
 /* right side */
 .right {
   flex-direction: column;
+  z-index: 1;
 }
 
 .register-form {

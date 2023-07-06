@@ -87,6 +87,15 @@ export default function CreateFC() {
                   />
                 </div>
               </div>
+
+              <div className="create-buttons-row">
+                <button className="blue-button" style={{ fontSize: '13px' }}>
+                  Add One Flashcard
+                </button>
+                <button className="blue-button" style={{ fontSize: '13px' }}>
+                  Create Set
+                </button>
+              </div>
             </form>
 
             {/* CSV FORM */}

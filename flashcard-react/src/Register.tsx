@@ -30,30 +30,6 @@ function Register() {
   const handlePasswordChange = createHandleInputChange(setPassword);
   const handleConfirmationChange = createHandleInputChange(setConfirmation);
 
-  // const handleNameChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  // ) => {
-  //   setName(event.target.value);
-  // };
-
-  // const handleEmailChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  // ) => {
-  //   setEmail(event.target.value);
-  // };
-
-  // const handlePasswordChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  // ) => {
-  //   setPassword(event.target.value);
-  // };
-
-  // const handleConfirmationChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>,
-  // ) => {
-  //   setConfirmation(event.target.value);
-  // };
-
   // USEEFFECT TO CLEAR ERROR ALERTS AFTER 2 SECONDS
   useEffect(() => {
     let timeoutId: number | undefined;
