@@ -48,6 +48,11 @@ function CsvCreate() {
         onDescriptionChange={setDescription}
         onCategoryChange={setCategory}
       />
+      {/* TODO: */}
+      <div className="set-flashcards">UPLOAD YOUR .CSV FILE</div>
+      <div className="csv-upload">
+        <input type="file" id="csv" name="csv" accept=".csv" />
+      </div>
     </form>
   );
 }
@@ -172,6 +177,7 @@ export function FlashcardSetInput({
   );
 }
 
+// A SEPARATED FUNCTION FOR FLASHCARD SET GENERAL INFO INCL. TITLE, DESCRIPTION, CATEGORY
 type FlashcardSetGeneralInfoProps = {
   onTitleChange: React.Dispatch<React.SetStateAction<string>>;
   onDescriptionChange: React.Dispatch<React.SetStateAction<string>>;
@@ -183,10 +189,6 @@ export function FlashcardSetGeneralInfo({
   onDescriptionChange,
   onCategoryChange,
 }: FlashcardSetGeneralInfoProps) {
-  // const [title, setTitle] = useState('');
-  // const [description, setDescription] = useState('');
-  // const [category, setCategory] = useState('');
-
   return (
     <>
       <FlashcardSetInput
