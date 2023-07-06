@@ -61,7 +61,6 @@
 .set-info-input {
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1px solid #3d808e;
   font-family: inherit;
   font-size: 14px;
   border: #eceff4 1px solid;
@@ -77,6 +76,10 @@
   transition: linear 100ms;
   font-weight: 500;
   opacity: 100%;
+}
+
+.set-flashcards {
+  margin-top: 24px;
 }
 
 .individual-flashcard {
@@ -113,4 +116,38 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+}
+
+.set-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  margin-top: 4px;
+}
+
+.set-category-options {
+  display: flex;
+  flex-grow: 1;
+}
+
+.set-category-options > select {
+  width: 100%;
+  background-color: #f6f7fb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  border: #eceff4 1px solid;
+  opacity: 70%;
+}
+
+.set-category-options > select:focus {
+  outline: none;
+  border: #54858f 1px solid;
+  box-shadow: 0px 2px 6px 0px #66c3d6;
+  background-color: #ffffff;
+  transition: linear 100ms;
+  font-weight: 500;
+  opacity: 100%;
 }
