@@ -67,12 +67,11 @@
   gap: 12px;
 }
 
-.set-category {
+.set-category,
+.csv-upload-root {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 24px;
-  margin-top: 4px;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .set-category-options {
@@ -98,4 +97,17 @@
   transition: linear 100ms;
   font-weight: 500;
   opacity: 100%;
+}
+
+.csv-upload-root {
+  margin-top: 24px;
+}
+
+.csv-upload {
+  background-color: #f6f7fb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-family: inherit;
+  border: #eceff4 1px solid;
+  opacity: 70%;
 }

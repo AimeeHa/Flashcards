@@ -49,9 +49,29 @@ function CsvCreate() {
         onCategoryChange={setCategory}
       />
       {/* TODO: */}
-      <div className="set-flashcards">UPLOAD YOUR .CSV FILE</div>
-      <div className="csv-upload">
-        <input type="file" id="csv" name="csv" accept=".csv" />
+      <div className="csv-upload-root">
+        <div style={{ width: '165px' }}>UPLOAD YOUR .CSV FILE</div>
+        <div className="csv-upload">
+          <input type="file" id="csv" name="csv" accept=".csv" />
+        </div>
+      </div>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+        }}
+      >
+        <button
+          className="blue-button"
+          style={{ fontSize: '13px', marginTop: '7px' }}
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+          // TODO: handle submit
+        >
+          Create Set
+        </button>
       </div>
     </form>
   );
