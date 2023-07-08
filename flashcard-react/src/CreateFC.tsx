@@ -3,6 +3,7 @@ import './CreateFC.css';
 import Layout from './Layout';
 import { UserContext } from './UserProvider';
 import { TabView } from './TabsView';
+import DriveFolderUploadRoundedIcon from '@mui/icons-material/DriveFolderUploadRounded';
 
 interface Flashcard {
   term: string;
@@ -39,8 +40,8 @@ function CsvCreate() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const [fileName, setFileName] = useState('Browse to choose file');
 
-  console.log('CSV', title, description, category);
   return (
     <form className="create-form">
       <FlashcardSetGeneralInfo
@@ -48,11 +49,32 @@ function CsvCreate() {
         onDescriptionChange={setDescription}
         onCategoryChange={setCategory}
       />
+      <div className="csv-instruction">
+        <div>* Notes for your .csv file:</div>
+        <ul>
+          <li>Should contain only two (2) columns for Term and Definition.</li>
+          <li>Should not contain any header row.</li>
+        </ul>
+      </div>
       {/* TODO: */}
       <div className="csv-upload-root">
         <div style={{ width: '165px' }}>UPLOAD YOUR .CSV FILE</div>
         <div className="csv-upload">
-          <input type="file" id="csv" name="csv" accept=".csv" />
+          <label className="csv-upload-label" htmlFor="csv">
+            <DriveFolderUploadRoundedIcon /> &nbsp; {fileName}
+          </label>
+          <input
+            type="file"
+            id="csv"
+            name="csv"
+            accept=".csv"
+            onChange={(e) => {
+              e.preventDefault();
+              if (e.target.files !== null) {
+                setFileName(e.target.files[0].name);
+              }
+            }}
+          />
         </div>
       </div>
       <div
@@ -67,6 +89,7 @@ function CsvCreate() {
           style={{ fontSize: '13px', marginTop: '7px' }}
           onClick={(e) => {
             e.preventDefault();
+            console.log(title, description, category, fileName);
           }}
           // TODO: handle submit
         >

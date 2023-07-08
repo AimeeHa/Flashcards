@@ -100,7 +100,7 @@
 }
 
 .csv-upload-root {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .csv-upload {
@@ -110,4 +110,24 @@
   font-family: inherit;
   border: #eceff4 1px solid;
   opacity: 70%;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+.csv-upload-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 500;
+  color: initial;
+}
+
+.csv-instruction {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  color: #8a8d8d;
+  font-weight: 450;
 }
