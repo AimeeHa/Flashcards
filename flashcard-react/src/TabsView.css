@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
-  height: 90%;
+  height: inherit;
 }
 
 .tab-options {
@@ -18,7 +18,7 @@
   flex-direction: column;
   flex-grow: 1;
   text-align: center;
-  height: 36px;
+  height: 42px;
   border-radius: 6px 6px 0px 0px;
   cursor: pointer;
 }
@@ -34,8 +34,8 @@
 }
 
 .tab-content-overall {
-  border: 1px solid #3d808e;
-  border-radius: 0px 0px 6px 6px;
+  border-top: 1px solid #3d808e;
+  /* border-radius: 0px 0px 6px 6px; */
   font-weight: 600;
-  padding: 12px 36px 0px;
+  padding: 24px 48px 0px;
 }

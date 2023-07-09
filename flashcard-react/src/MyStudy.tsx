@@ -38,9 +38,11 @@ export default function MyStudy() {
 function OwnedSet() {
   return (
     <div>
-      <ul>
-        <li>Owned Set 1</li>
-        <li>Owned Set 2</li>
+      <ul className="mystudy-list">
+        <li className="mystudy-listitem">Owned Set 1</li>
+        <li className="mystudy-listitem">Owned Set 2</li>
+        <li className="mystudy-listitem">Owned Set 2</li>
+        <li className="mystudy-listitem">Owned Set 2</li>
       </ul>
     </div>
   );
@@ -49,9 +51,11 @@ function OwnedSet() {
 function SavedSet() {
   return (
     <div>
-      <ul>
-        <li>Saved Set 1</li>
-        <li>Saved Set 2</li>
+      <ul className="mystudy-list">
+        <li className="mystudy-listitem">Saved Set 1</li>
+        <li className="mystudy-listitem">Saved Set 2</li>
+        <li className="mystudy-listitem">Saved Set 2</li>
+        <li className="mystudy-listitem">Saved Set 2</li>
       </ul>
     </div>
   );

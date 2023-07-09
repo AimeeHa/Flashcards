@@ -35,7 +35,6 @@ export const TabView = ({ tabs }: Props) => {
         </div>
         <div className="tab-content-overall">{tabs[selectedView].view}</div>
       </div>
-      ;
     </>
   );
 };
