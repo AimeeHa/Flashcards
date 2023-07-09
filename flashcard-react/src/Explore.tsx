@@ -1,6 +1,7 @@
 import Slideshow from './Slideshow';
 import Layout from './Layout';
 import { TabView } from './TabsView';
+import './Explore.css';
 
 function Explore() {
   return (
@@ -30,7 +31,12 @@ function PopularSets() {
         <Slideshow />
       </div>
       <div className="popularSets">
-        <div>POPULAR FLASHCARD SETS</div>
+        <ul className="explore-list">
+          <li className="explore-listitem"> Set 1</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+        </ul>
       </div>
     </>
   );
@@ -42,7 +48,29 @@ function AllSets() {
       <div className="mostSavedBanner">
         <Slideshow />
       </div>
-      <div className="allCategories">FLASHCARD SETS BY CATEGORY</div>
+      <div className="allCategories">
+        <div>ENGLISH</div>
+        <ul className="explore-list">
+          <li className="explore-listitem"> Set 1</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+        </ul>
+        <div>TECHNOLOGY</div>
+        <ul className="explore-list">
+          <li className="explore-listitem"> Set 1</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+        </ul>
+        <div>OTHERS</div>
+        <ul className="explore-list">
+          <li className="explore-listitem"> Set 1</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+          <li className="explore-listitem"> Set 2</li>
+        </ul>
+      </div>
     </>
   );
 }

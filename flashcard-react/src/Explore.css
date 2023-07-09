@@ -1,0 +1,18 @@
+.explore-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 0;
+}
+
+.explore-listitem {
+  display: flex;
+  flex-direction: column;
+  transition: ease 300ms;
+  cursor: pointer;
+}
+
+.explore-listitem:hover {
+  font-weight: 700;
+  color: #54858f;
+}

@@ -13,7 +13,7 @@
 .slide-overall {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   min-height: 360px;
   margin-bottom: 12px;
@@ -73,7 +73,7 @@
 
 .wordContents,
 .imgContent {
-  width: 45%;
+  width: 47%;
   height: 360px;
   border: #3d808e 1px solid;
   border-radius: 10px;
