@@ -112,10 +112,11 @@
   top: 0;
   color: red;
   font-size: 14px;
+  font-weight: 500;
   width: 100%;
 }
 
-.alert-hidden {
+/* .alert-hidden {
   position: absolute;
   top: 0;
   font-size: 14px;
@@ -125,7 +126,7 @@
 
 .alert-hidden a {
   display: none;
-}
+} */
 
 .already-logged-in-message {
   font-size: 16px;

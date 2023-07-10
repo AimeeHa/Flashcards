@@ -16,8 +16,7 @@ function Register() {
   const [password, setPassword] = useState('');
   const [confirmation, setConfirmation] = useState('');
 
-  const [isPwError, setIsPwError] = useState(false);
-  const [isEmailError, setIsEmailError] = useState(false);
+  const [isError, setIsError] = useState('');
 
   const createHandleInputChange = (setStateFunc: any) => {
     return (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,38 +33,23 @@ function Register() {
   useEffect(() => {
     let timeoutId: number | undefined;
 
-    if (isPwError) {
+    if (isError) {
       timeoutId = setTimeout(() => {
-        setIsPwError(false);
+        setIsError('');
       }, 2000);
 
       return () => {
         clearTimeout(timeoutId);
       };
     }
-    [isPwError];
-  });
-
-  useEffect(() => {
-    let timeoutId: number | undefined;
-
-    if (isEmailError) {
-      timeoutId = setTimeout(() => {
-        setIsEmailError(false);
-      }, 3000);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-    [isEmailError];
+    [isError];
   });
 
   // HANDLE FORM SUBMISSION
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (password !== confirmation) {
-      setIsPwError(true);
+      setIsError('Passwords do not match. Please try again.');
     } else {
       const formData = { name: name, email: email, password: password };
 
@@ -81,7 +65,9 @@ function Register() {
         console.log('Successfully registered!');
         navigate('/login');
       } else if (response.status === 400) {
-        setIsEmailError(true);
+        setIsError(
+          'This email has already been registered. Please use another email or back to Homepage for login.',
+        );
       } else {
         alert(response.status + ' ' + response.statusText);
       }
@@ -127,23 +113,7 @@ function Register() {
           </div>
         </form>
         <div className="alert-root">
-          <div className={isPwError ? 'alert-shown' : 'alert-hidden'}>
-            Passwords do not match. Please try again.
-          </div>
-          <div className={isEmailError ? 'alert-shown' : 'alert-hidden'}>
-            This email has already been registered. Please use another email or
-            back to &nbsp;
-            <a
-              href="/login"
-              style={{
-                color: '#3D808E',
-                fontWeight: '500',
-              }}
-            >
-              login
-            </a>
-            .
-          </div>
+          <div className="alert-shown">{isError}</div>
         </div>
       </>
     ) : (

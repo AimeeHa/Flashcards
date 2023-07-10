@@ -17,6 +17,8 @@ def get_user_info(request):
         return Response({"error": "User not found."}, status=404)
 
 @api_view(["POST"])
+@authentication_classes([])
+@permission_classes([])
 def register(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():

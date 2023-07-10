@@ -121,11 +121,11 @@
   font-size: 14px;
 }
 
-.alert-hidden {
+/* .alert-hidden {
   font-size: 14px;
   visibility: hidden;
   width: 100%;
-}
+} */
 
 .already-logged-in-message {
   font-size: 16px;

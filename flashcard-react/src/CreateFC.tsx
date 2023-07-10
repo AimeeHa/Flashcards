@@ -64,34 +64,12 @@ function CsvCreate() {
   });
 
   // HANDLE SUBMIT
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData();
-    data.append(
-      'setInfo',
-      JSON.stringify({
-        title: title,
-        description: description,
-        category: category,
-        user: useContext(UserContext),
-      }),
-    );
-
-    if (file !== null) {
-      data.append('file', file);
-    } else {
-      setError('Please choose a file');
-    }
-    fetch('http://localhost:8000/create/', {
-      method: 'POST',
-      credentials: 'include',
-      body: data,
-    });
-    navigate('/mystudy');
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    handleSubmit(e, title, description, category, file, null, navigate);
   };
 
   return (
-    <form className="create-form" onSubmit={handleSubmit} method="post">
+    <form className="create-form" onSubmit={onSubmit} method="post">
       <FlashcardSetGeneralInfo
         onTitleChange={setTitle}
         onDescriptionChange={setDescription}
@@ -158,30 +136,13 @@ function ManualCreate() {
   ]);
 
   // HANDLE SUBMIT
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData();
-    data.append(
-      'setInfo',
-      JSON.stringify({
-        title: title,
-        description: description,
-        category: category,
-        user: useContext(UserContext),
-        flashcards: flashcards,
-      }),
-    );
-    fetch('http://localhost:8000/create/', {
-      method: 'POST',
-      credentials: 'include',
-      body: data,
-    });
-    navigate('/mystudy');
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    handleSubmit(e, title, description, category, null, flashcards, navigate);
   };
 
   return (
     <>
-      <form className="create-form" onSubmit={handleSubmit} method="post">
+      <form className="create-form" onSubmit={onSubmit} method="post">
         <FlashcardSetGeneralInfo
           onTitleChange={setTitle}
           onDescriptionChange={setDescription}
@@ -344,4 +305,37 @@ export function FlashcardSetGeneralInfo({
       </div>
     </>
   );
+}
+
+// HANDLE SUBMIT AS A SEPARATED FUNCTION FOR REUSABILITY
+async function handleSubmit(
+  e: React.FormEvent<HTMLFormElement>,
+  title: string,
+  description: string,
+  category: string,
+  file: File | null,
+  flashcards: Flashcard[] | null,
+  navigate: any,
+) {
+  e.preventDefault();
+  const data = new FormData();
+  data.append(
+    'setInfo',
+    JSON.stringify({
+      title: title,
+      description: description,
+      category: category,
+      user: useContext(UserContext),
+    }),
+  );
+  // TODO:
+  if (file != null) {
+  }
+
+  fetch('http://localhost:8000/create/', {
+    method: 'POST',
+    credentials: 'include',
+    body: data,
+  });
+  navigate('/mystudy');
 }

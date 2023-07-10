@@ -14,7 +14,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const [isError, setIsError] = useState(false);
+  const [isError, setIsError] = useState('');
 
   const handleEmailChange = async (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -33,7 +33,7 @@ function Login() {
 
     if (isError) {
       timeoutId = setTimeout(() => {
-        setIsError(false);
+        setIsError('');
       }, 2000);
 
       return () => {
@@ -61,7 +61,7 @@ function Login() {
       navigate('/');
       navigate(0); // refresh page
     } else if (response.status === 400) {
-      setIsError(true);
+      setIsError('Incorrect email or password. Please try again.');
     } else {
       alert(response.status + ' ' + response.statusText);
     }
@@ -105,10 +105,8 @@ function Login() {
         >
           <a href="/register">New here? Register an account.</a>
         </div>
-        <div className={'alert-root'}>
-          <div className={isError ? 'alert-shown' : 'alert-hidden'}>
-            Incorrect email or password. Please try again.
-          </div>
+        <div className="alert-root">
+          <div className="alert-shown">{isError}</div>
         </div>
       </>
     ) : (
