@@ -65,6 +65,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  margin-bottom: 18px;
 }
 
 .set-category,
@@ -130,4 +131,9 @@ input[type='file'] {
   margin-top: 24px;
   color: #8a8d8d;
   font-weight: 450;
+}
+
+.create-error {
+  color: red;
+  font-weight: 500;
 }

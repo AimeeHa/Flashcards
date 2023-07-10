@@ -1,9 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './CreateFC.css';
 import Layout from './Layout';
 import { UserContext } from './UserProvider';
 import { TabView } from './TabsView';
 import DriveFolderUploadRoundedIcon from '@mui/icons-material/DriveFolderUploadRounded';
+import { useNavigate } from 'react-router-dom';
 
 interface Flashcard {
   term: string;
@@ -13,7 +14,7 @@ interface Flashcard {
 export default function CreateFC() {
   const user = useContext(UserContext);
 
-  if (user == null) {
+  if (user === null) {
     return (
       <Layout>
         <div className="null-user-message">
@@ -37,13 +38,60 @@ export default function CreateFC() {
 
 /* CSV FORM ONLY SHOW WHEN CHOOSE CSV IS SELECTED*/
 function CsvCreate() {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
   const [fileName, setFileName] = useState('Browse to choose file');
+  const [file, setFile] = useState<File | null>(null);
+
+  // FLAGGING ERROR IF NO FILE CHOSEN
+  const [error, setError] = useState('');
+  useEffect(() => {
+    let timeoutId: number | undefined;
+
+    if (error) {
+      timeoutId = setTimeout(() => {
+        setError('');
+      }, 2000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+    [error];
+  });
+
+  // HANDLE SUBMIT
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append(
+      'setInfo',
+      JSON.stringify({
+        title: title,
+        description: description,
+        category: category,
+        user: useContext(UserContext),
+      }),
+    );
+
+    if (file !== null) {
+      data.append('file', file);
+    } else {
+      setError('Please choose a file');
+    }
+    fetch('http://localhost:8000/create/', {
+      method: 'POST',
+      credentials: 'include',
+      body: data,
+    });
+    navigate('/mystudy');
+  };
 
   return (
-    <form className="create-form">
+    <form className="create-form" onSubmit={handleSubmit} method="post">
       <FlashcardSetGeneralInfo
         onTitleChange={setTitle}
         onDescriptionChange={setDescription}
@@ -56,7 +104,7 @@ function CsvCreate() {
           <li>Should not contain any header row.</li>
         </ul>
       </div>
-      {/* TODO: */}
+
       <div className="csv-upload-root">
         <div style={{ width: '165px' }}>UPLOAD YOUR .CSV FILE</div>
         <div className="csv-upload">
@@ -71,6 +119,7 @@ function CsvCreate() {
             onChange={(e) => {
               e.preventDefault();
               if (e.target.files !== null) {
+                setFile(e.target.files[0]);
                 setFileName(e.target.files[0].name);
               }
             }}
@@ -85,34 +134,54 @@ function CsvCreate() {
         }}
       >
         <button
+          type="submit"
           className="blue-button"
           style={{ fontSize: '13px', marginTop: '7px' }}
-          onClick={(e) => {
-            e.preventDefault();
-            console.log(title, description, category, fileName);
-          }}
-          // TODO: handle submit
         >
           Create Set
         </button>
       </div>
+      <div className="create-error">{error}</div>
     </form>
   );
 }
 
 /* MANUAL FORM ONLY SHOW WHEN CHOOSE MANUAL IS SELECTED*/
 function ManualCreate() {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
-
   const [flashcards, setFlashcards] = useState<Flashcard[]>([
     { term: '', definition: '' },
   ]);
 
+  // HANDLE SUBMIT
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append(
+      'setInfo',
+      JSON.stringify({
+        title: title,
+        description: description,
+        category: category,
+        user: useContext(UserContext),
+        flashcards: flashcards,
+      }),
+    );
+    fetch('http://localhost:8000/create/', {
+      method: 'POST',
+      credentials: 'include',
+      body: data,
+    });
+    navigate('/mystudy');
+  };
+
   return (
     <>
-      <form className="create-form">
+      <form className="create-form" onSubmit={handleSubmit} method="post">
         <FlashcardSetGeneralInfo
           onTitleChange={setTitle}
           onDescriptionChange={setDescription}
@@ -170,12 +239,7 @@ function ManualCreate() {
           <button
             className="blue-button"
             style={{ fontSize: '13px' }}
-            onClick={(e) => {
-              e.preventDefault();
-              console.log(title, description, category);
-              console.log(flashcards);
-            }}
-            // TODO: handle submit
+            type="submit"
           >
             Create Set
           </button>
@@ -185,6 +249,7 @@ function ManualCreate() {
   );
 }
 
+// GENERAL INPUT FOR ALL CREATE INPUT EXCEPT CSV INPUT
 export function FlashcardSetInput({
   rootClassName,
   id,
