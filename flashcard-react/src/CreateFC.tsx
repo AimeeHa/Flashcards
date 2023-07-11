@@ -38,8 +38,8 @@ export default function CreateFC() {
 
 /* CSV FORM ONLY SHOW WHEN CHOOSE CSV IS SELECTED*/
 function CsvCreate() {
+  const user = useContext(UserContext);
   const navigate = useNavigate();
-
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -65,7 +65,7 @@ function CsvCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    handleSubmit(e, title, description, category, file, null, navigate);
+    handleSubmit(e, title, description, category, file, null, navigate, user);
   };
 
   return (
@@ -126,8 +126,8 @@ function CsvCreate() {
 
 /* MANUAL FORM ONLY SHOW WHEN CHOOSE MANUAL IS SELECTED*/
 function ManualCreate() {
+  const user = useContext(UserContext);
   const navigate = useNavigate();
-
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -137,7 +137,17 @@ function ManualCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    handleSubmit(e, title, description, category, null, flashcards, navigate);
+    console.log('submit');
+    handleSubmit(
+      e,
+      title,
+      description,
+      category,
+      null,
+      flashcards,
+      navigate,
+      user,
+    );
   };
 
   return (
@@ -316,6 +326,7 @@ async function handleSubmit(
   file: File | null,
   flashcards: Flashcard[] | null,
   navigate: any,
+  user: any,
 ) {
   e.preventDefault();
   const data = new FormData();
@@ -325,12 +336,18 @@ async function handleSubmit(
       title: title,
       description: description,
       category: category,
-      user: useContext(UserContext),
+      user: user,
     }),
   );
-  // TODO:
+
   if (file != null) {
+    data.append('file', file);
   }
+  if (flashcards != null) {
+    data.append('flashcards', JSON.stringify(flashcards));
+  }
+
+  console.log(data);
 
   fetch('http://localhost:8000/create/', {
     method: 'POST',

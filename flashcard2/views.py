@@ -48,3 +48,13 @@ def logout_view(request):
     logout(request)
     return Response({"message": "User logged out successfully."}, status=200)
 
+@api_view(["POST"])
+@authentication_classes([SessionAuthentication])
+@permission_classes([])
+def create_set(request):
+    serializer = FlashcardSetSerializer(data=request.data)
+    print('CHECK', serializer)
+    # if serializer.is_valid():
+    #     serializer.save()
+    #     return Response({"message": "Set created successfully."}, status=201)
+    return Response({"error": serializer.errors}, status=400)
