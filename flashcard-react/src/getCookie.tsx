@@ -1,4 +1,4 @@
-export default function getCookie(cookieName: string): string | undefined {
+export default function getCookie(cookieName: string): string {
   const cookieValue = document.cookie
     .split(';')
     .find((cookie) => cookie.trim().startsWith(`${cookieName}=`));
@@ -7,5 +7,5 @@ export default function getCookie(cookieName: string): string | undefined {
     return cookieValue.split('=')[1];
   }
 
-  return undefined;
+  return '';
 }

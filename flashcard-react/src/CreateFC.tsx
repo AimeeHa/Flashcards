@@ -5,6 +5,7 @@ import { UserContext } from './UserProvider';
 import { TabView } from './TabsView';
 import DriveFolderUploadRoundedIcon from '@mui/icons-material/DriveFolderUploadRounded';
 import { useNavigate } from 'react-router-dom';
+import getCookie from './getCookie';
 
 interface Flashcard {
   term: string;
@@ -329,16 +330,12 @@ async function handleSubmit(
   user: any,
 ) {
   e.preventDefault();
+  const csrftoken = getCookie('csrftoken');
   const data = new FormData();
-  data.append(
-    'setInfo',
-    JSON.stringify({
-      title: title,
-      description: description,
-      category: category,
-      user: user,
-    }),
-  );
+  data.append('user', user);
+  data.append('set_name', title);
+  data.append('description', description);
+  data.append('category', category);
 
   if (file != null) {
     data.append('file', file);
@@ -351,6 +348,9 @@ async function handleSubmit(
 
   fetch('http://localhost:8000/create/', {
     method: 'POST',
+    headers: {
+      'X-CSRFToken': csrftoken,
+    },
     credentials: 'include',
     body: data,
   });

@@ -54,7 +54,9 @@ def logout_view(request):
 def create_set(request):
     serializer = FlashcardSetSerializer(data=request.data)
     print('CHECK', serializer)
-    # if serializer.is_valid():
-    #     serializer.save()
-    #     return Response({"message": "Set created successfully."}, status=201)
+    print('CHECK VALID', serializer.is_valid())
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message": "Set created successfully."}, status=201)
+    print('CHECK ERROR', serializer.errors)
     return Response({"error": serializer.errors}, status=400)
