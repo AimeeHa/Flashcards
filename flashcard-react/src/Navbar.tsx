@@ -30,10 +30,11 @@ function Navbar() {
 
   // Check if user is authenticated
   const loginRegister =
-    user != null ? (
+    user?.username != null ? (
       <>
         <li className="greeting-logged-in">
-          <AccountCircleRoundedIcon style={{ color: '#3d808e' }} /> {user}
+          <AccountCircleRoundedIcon style={{ color: '#3d808e' }} />{' '}
+          {user.username}
         </li>
         <li className="navButton">
           <a className="white-button" onClick={handleLogout}>

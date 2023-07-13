@@ -75,7 +75,7 @@ function Register() {
   };
 
   const rightContent =
-    user == null ? (
+    user?.username === null ? (
       <>
         <form className="register-form" onSubmit={handleSubmit}>
           <InputRow

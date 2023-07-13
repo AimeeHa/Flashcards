@@ -7,7 +7,7 @@ import { TabView } from './TabsView';
 export default function MyStudy() {
   const user = useContext(UserContext);
 
-  if (user == null) {
+  if (user?.username === null) {
     return (
       <Layout>
         <div className="null-user-message">

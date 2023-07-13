@@ -68,7 +68,7 @@ function Login() {
   };
 
   const rightContent =
-    user == null ? (
+    user?.username === null ? (
       <>
         <div className="form-root">
           <form className="login-form" onSubmit={handleSubmit}>

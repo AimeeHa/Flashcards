@@ -39,7 +39,7 @@ export default function CreateFC() {
 
 /* CSV FORM ONLY SHOW WHEN CHOOSE CSV IS SELECTED*/
 function CsvCreate() {
-  const user = useContext(UserContext);
+  const userID = useContext(UserContext)?.userID;
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -66,7 +66,7 @@ function CsvCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    handleSubmit(e, title, description, category, file, null, navigate, user);
+    handleSubmit(e, title, description, category, file, null, navigate, userID);
   };
 
   return (
@@ -127,7 +127,7 @@ function CsvCreate() {
 
 /* MANUAL FORM ONLY SHOW WHEN CHOOSE MANUAL IS SELECTED*/
 function ManualCreate() {
-  const user = useContext(UserContext);
+  const userID = useContext(UserContext)?.userID;
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -138,7 +138,7 @@ function ManualCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('submit');
+    console.log('userID', userID);
     handleSubmit(
       e,
       title,
@@ -147,7 +147,7 @@ function ManualCreate() {
       null,
       flashcards,
       navigate,
-      user,
+      userID,
     );
   };
 
@@ -327,12 +327,12 @@ async function handleSubmit(
   file: File | null,
   flashcards: Flashcard[] | null,
   navigate: any,
-  user: any,
+  userID: any,
 ) {
   e.preventDefault();
   const csrftoken = getCookie('csrftoken');
   const data = new FormData();
-  data.append('user', user);
+  data.append('user', userID);
   data.append('set_name', title);
   data.append('description', description);
   data.append('category', category);
