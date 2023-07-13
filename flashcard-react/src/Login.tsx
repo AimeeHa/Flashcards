@@ -6,10 +6,12 @@ import { useContext, useEffect, useState } from 'react';
 import LoginLeftContent from './LoginLeftContent';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserProvider';
+import getCookie from './getCookie';
 
 function Login() {
   const navigate = useNavigate();
   const user = useContext(UserContext);
+  const csrftoken = getCookie('csrftoken');
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -51,6 +53,7 @@ function Login() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken,
       },
       credentials: 'include',
       body: JSON.stringify(formData),

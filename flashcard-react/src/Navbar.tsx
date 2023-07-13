@@ -5,22 +5,24 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { UserContext } from './UserProvider';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import getCookie from './getCookie';
 
 function Navbar() {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
   const user = useContext(UserContext);
+  console.log('nav user', user);
 
   const handleLogout = async () => {
     const response = await fetch('http://localhost:8000/logout/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-CSRFToken': getCookie('csrftoken'),
       },
       credentials: 'include',
     });
-    console.log(response);
     if (response.status === 200) {
       console.log('Successfully logged out!');
       navigate('/');

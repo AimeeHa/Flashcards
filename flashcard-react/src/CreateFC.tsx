@@ -15,7 +15,7 @@ interface Flashcard {
 export default function CreateFC() {
   const user = useContext(UserContext);
 
-  if (user === null) {
+  if (user?.username === null) {
     return (
       <Layout>
         <div className="null-user-message">
@@ -39,7 +39,7 @@ export default function CreateFC() {
 
 /* CSV FORM ONLY SHOW WHEN CHOOSE CSV IS SELECTED*/
 function CsvCreate() {
-  const userID = useContext(UserContext)?.userID;
+  const user = useContext(UserContext);
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -66,7 +66,16 @@ function CsvCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    handleSubmit(e, title, description, category, file, null, navigate, userID);
+    handleSubmit(
+      e,
+      title,
+      description,
+      category,
+      file,
+      null,
+      navigate,
+      user?.email,
+    );
   };
 
   return (
@@ -127,7 +136,7 @@ function CsvCreate() {
 
 /* MANUAL FORM ONLY SHOW WHEN CHOOSE MANUAL IS SELECTED*/
 function ManualCreate() {
-  const userID = useContext(UserContext)?.userID;
+  const user = useContext(UserContext);
   const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -138,7 +147,7 @@ function ManualCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('userID', userID);
+    console.log('userID', user);
     handleSubmit(
       e,
       title,
@@ -147,7 +156,7 @@ function ManualCreate() {
       null,
       flashcards,
       navigate,
-      userID,
+      user?.email,
     );
   };
 
@@ -327,12 +336,12 @@ async function handleSubmit(
   file: File | null,
   flashcards: Flashcard[] | null,
   navigate: any,
-  userID: any,
+  userEmail: any,
 ) {
   e.preventDefault();
   const csrftoken = getCookie('csrftoken');
   const data = new FormData();
-  data.append('user', userID);
+  data.append('user', userEmail);
   data.append('set_name', title);
   data.append('description', description);
   data.append('category', category);
@@ -344,7 +353,7 @@ async function handleSubmit(
     data.append('flashcards', JSON.stringify(flashcards));
   }
 
-  console.log(data);
+  console.log('data', data);
 
   fetch('http://localhost:8000/create/', {
     method: 'POST',

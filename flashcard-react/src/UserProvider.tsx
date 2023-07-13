@@ -2,35 +2,44 @@ import React, { createContext, useState, useEffect } from 'react';
 
 type User = {
   username: string | null;
-  userID: number | null;
+  email: string | null;
 };
 
 export const UserContext = createContext<User | null>(null);
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   const [username, setUsername] = useState<string | null>(null);
-  const [userID, setUserID] = useState<number | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
 
   const checkLogin = async () => {
-    const response = await fetch('http://localhost:8000/getuserinfo/', {
-      method: 'GET',
-      credentials: 'include',
-    });
-    if (response.status === 200) {
-      setUsername(((await response.json()) as any).name);
-      setUserID(((await response.json()) as any).id);
-    } else {
+    try {
+      const response = await fetch('http://localhost:8000/getuserinfo/', {
+        method: 'GET',
+        credentials: 'include',
+      });
+      if (response.status === 200) {
+        const data = await response.json();
+        console.log('UserContext response', data);
+        setUsername(data.name);
+        setEmail(data.email);
+      } else {
+        setUsername(null);
+        setEmail(null);
+      }
+    } catch (error) {
+      console.error('Error fetching user info:', error);
       setUsername(null);
-      setUserID(null);
+      setEmail(null);
     }
   };
 
   useEffect(() => {
     checkLogin();
-    console.log(userID); ///WHY IS THIS NULL
   }, []);
 
+  console.log('UserContext', username, email);
+
   return (
-    <UserContext.Provider value={{ username, userID }}>
+    <UserContext.Provider value={{ username, email }}>
       {children}
     </UserContext.Provider>
   );
