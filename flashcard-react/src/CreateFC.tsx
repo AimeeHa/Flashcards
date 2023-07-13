@@ -147,7 +147,6 @@ function ManualCreate() {
 
   // HANDLE SUBMIT
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log('userID', user);
     handleSubmit(
       e,
       title,
@@ -317,9 +316,9 @@ export function FlashcardSetGeneralInfo({
             <option value="" disabled selected hidden>
               Choose a category
             </option>
-            <option value="english">English</option>
-            <option value="technology">Technology</option>
-            <option value="others">Others</option>
+            <option value="English">English</option>
+            <option value="Technology">Technology</option>
+            <option value="Others">Others</option>
           </select>
         </div>
       </div>
@@ -345,6 +344,9 @@ async function handleSubmit(
   data.append('set_name', title);
   data.append('description', description);
   data.append('category', category);
+  data.append('created_at', new Date().toISOString().slice(0, 10));
+
+  // console.log('date', new Date().toISOString());
 
   if (file != null) {
     data.append('file', file);
@@ -352,8 +354,6 @@ async function handleSubmit(
   if (flashcards != null) {
     data.append('flashcards', JSON.stringify(flashcards));
   }
-
-  console.log('data', data);
 
   fetch('http://localhost:8000/create/', {
     method: 'POST',

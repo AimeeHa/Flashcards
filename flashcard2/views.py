@@ -52,11 +52,19 @@ def logout_view(request):
 @authentication_classes([SessionAuthentication])
 @permission_classes([])
 def create_set(request):
-    serializer = FlashcardSetSerializer(data=request.data)
-    print('CHECK', serializer)
-    print('CHECK VALID', serializer.is_valid())
-    if serializer.is_valid():
-        serializer.save()
+    set_serializer = FlashcardSetSerializer(data=request.data)
+    cards_serializer = FlashcardSerializer(data=request.data)
+    cards_info = cards_serializer.initial_data['flashcards']
+    print('CHECK SET', set_serializer)
+    print('CARD INFO', cards_info, type(cards_info))
+    if set_serializer.is_valid():
+        set_serializer.save()
+        for i in range(len(cards_info)):
+            new_term = cards_info[i]['term']
+            new_definition = cards_info[i]['definition']
+            new_card = Flashcard.objects.create(set=set_serializer.instance, term=new_term, definition=new_definition)
+            print('CHECK CARDS', new_card)
         return Response({"message": "Set created successfully."}, status=201)
-    print('CHECK ERROR', serializer.errors)
-    return Response({"error": serializer.errors}, status=400)
+    print('CHECK SET ERROR', set_serializer.errors)
+    print('CHECK CARDS ERROR', cards_serializer.errors)
+    return Response({"set_error": set_serializer.errors, "card_error": cards_serializer.errors}, status=400)

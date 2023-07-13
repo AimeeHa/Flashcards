@@ -12,7 +12,6 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const [menuClicked, setMenuClicked] = useState(false);
   const user = useContext(UserContext);
-  console.log('nav user', user);
 
   const handleLogout = async () => {
     const response = await fetch('http://localhost:8000/logout/', {

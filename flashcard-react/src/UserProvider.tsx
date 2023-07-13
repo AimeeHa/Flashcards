@@ -18,7 +18,6 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
       });
       if (response.status === 200) {
         const data = await response.json();
-        console.log('UserContext response', data);
         setUsername(data.name);
         setEmail(data.email);
       } else {
@@ -35,8 +34,6 @@ export const UserProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     checkLogin();
   }, []);
-
-  console.log('UserContext', username, email);
 
   return (
     <UserContext.Provider value={{ username, email }}>
